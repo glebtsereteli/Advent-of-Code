@@ -6,7 +6,7 @@
   "name":"_2024_02_",
   "parent":{
     "name":"2024",
-    "path":"folders/2024.yy",
+    "path":"folders/Solutions/2024.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

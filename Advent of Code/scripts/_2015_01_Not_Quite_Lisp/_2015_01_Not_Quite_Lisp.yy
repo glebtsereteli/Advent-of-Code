@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_utility",
+  "%Name":"_2015_01_Not_Quite_Lisp",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_utility",
+  "name":"_2015_01_Not_Quite_Lisp",
   "parent":{
-    "name":"Utility",
-    "path":"folders/Utility.yy",
+    "name":"2015",
+    "path":"folders/Solutions/2015.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

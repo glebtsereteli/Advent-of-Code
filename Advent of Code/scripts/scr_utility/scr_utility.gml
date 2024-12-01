@@ -6,7 +6,7 @@ function input(_filename) {
 	return _string;
 }
 function print(_value, _loud = false) {
-	show_debug_message(_value);
+	show_debug_message($"- - - - - - - - - - {_value}");
 	if (_loud) {
 		show_message(_value);
 	}

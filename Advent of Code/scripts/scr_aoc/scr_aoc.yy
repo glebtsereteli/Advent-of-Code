@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_aoc",
   "parent":{
-    "name":"AoC",
-    "path":"folders/AoC.yy",
+    "name":"Utility",
+    "path":"folders/Utility.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

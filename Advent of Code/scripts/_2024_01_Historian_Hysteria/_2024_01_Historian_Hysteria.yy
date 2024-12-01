@@ -6,7 +6,7 @@
   "name":"_2024_01_Historian_Hysteria",
   "parent":{
     "name":"2024",
-    "path":"folders/2024.yy",
+    "path":"folders/Solutions/2024.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
