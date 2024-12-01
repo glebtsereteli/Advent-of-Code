@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"_20XX_XX_",
+  "%Name":"scr_aoc",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"_20XX_XX_",
+  "name":"scr_aoc",
   "parent":{
     "name":"AoC",
     "path":"folders/AoC.yy",

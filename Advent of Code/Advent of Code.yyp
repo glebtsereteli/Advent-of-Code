@@ -11,9 +11,10 @@
   "defaultScriptType":1,
   "Folders":[
     {"$GMFolder":"","%Name":"2024","folderPath":"folders/2024.yy","name":"2024","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"Test","folderPath":"folders/Test.yy","name":"Test","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"AoC","folderPath":"folders/AoC.yy","name":"AoC","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "IncludedFiles":[
+    {"$GMIncludedFile":"","%Name":"2024_01_Historian_Hysteria_Demo.txt","CopyToMask":-1,"filePath":"datafiles/2024","name":"2024_01_Historian_Hysteria_Demo.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"2024_01_Historian_Hysteria.txt","CopyToMask":-1,"filePath":"datafiles/2024","name":"2024_01_Historian_Hysteria.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
   ],
   "isEcma":false,
@@ -23,16 +24,17 @@
   },
   "name":"Advent of Code",
   "resources":[
-    {"id":{"name":"obj_test","path":"objects/obj_test/obj_test.yy",},},
-    {"id":{"name":"rm_test","path":"rooms/rm_test/rm_test.yy",},},
+    {"id":{"name":"rm_aoc","path":"rooms/rm_aoc/rm_aoc.yy",},},
     {"id":{"name":"_2024_01_Historian_Hysteria","path":"scripts/_2024_01_Historian_Hysteria/_2024_01_Historian_Hysteria.yy",},},
     {"id":{"name":"_2024_02_","path":"scripts/_2024_02_/_2024_02_.yy",},},
     {"id":{"name":"_20XX_XX_","path":"scripts/_20XX_XX_/_20XX_XX_.yy",},},
+    {"id":{"name":"scr_aoc","path":"scripts/scr_aoc/scr_aoc.yy",},},
+    {"id":{"name":"scr_utility","path":"scripts/scr_utility/scr_utility.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"rm_test","path":"rooms/rm_test/rm_test.yy",},},
+    {"roomId":{"name":"rm_aoc","path":"rooms/rm_aoc/rm_aoc.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

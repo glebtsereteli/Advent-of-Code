@@ -3,18 +3,18 @@
 // https://adventofcode.com/2024/day/1
 
 function _2024_01() {
-	var _buffer = buffer_load("2024/2024_01_Historian_Hysteria.txt");
-	var _input = string_split(buffer_read(_buffer, buffer_text), "\n");
-	buffer_delete(_buffer);
-	var _a = [];
-	var _b = [];
-	var _i = 0; repeat (array_length(_input)) {
-		var _pair = string_split(_input[_i++], "   ");
-		array_push(_a, real(_pair[0]));
-		array_push(_b, real(_pair[1]));
+	var _input = string_split(input("2024/2024_01_Historian_Hysteria.txt"), "\n");
+	var _n = array_length(_input);
+	var _a = array_create(_n);
+	var _b = array_create(_n);
+	var _i = 0; repeat (_n) {
+		var _pair = string_split(_input[_i], "   ");
+		_a[_i] = real(_pair[0]);
+		_b[_i] = real(_pair[1]);
+		_i++;
 	}
-	show_debug_message(_2024_01a(_a, _b));
-	show_debug_message(_2024_01b(_a, _b));	
+	print(_2024_01a(_a, _b));
+	print(_2024_01b(_a, _b));
 }
 function _2024_01a(_a, _b) {
 	array_sort(_a, true);
