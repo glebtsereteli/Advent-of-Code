@@ -1,10 +1,11 @@
 
-// 2024/1: Historian Hysteria
+// 2024/01: Historian Hysteria
 // https://adventofcode.com/2024/day/1
 
 function _2024_01() {
 	var _buffer = buffer_load("2024/2024_01_Historian_Hysteria.txt");
 	var _input = string_split(buffer_read(_buffer, buffer_text), "\n");
+	buffer_delete(_buffer);
 	var _a = [];
 	var _b = [];
 	var _i = 0; repeat (array_length(_input)) {

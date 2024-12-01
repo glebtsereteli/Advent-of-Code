@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"_2024_02_",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"_2024_02_",
+  "parent":{
+    "name":"2024",
+    "path":"folders/2024.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
