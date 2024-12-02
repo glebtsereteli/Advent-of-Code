@@ -10,7 +10,7 @@ function _2024_01() {
 		_b[_i] = real(_pair[1]);
 		_i++;
 	}
-	print($"{_2024_01a(_input)}, {_2024_01b(_input)}");
+	print($"{_2024_01a(_a, _b)}, {_2024_01b(_a, _b)}");
 }
 function _2024_01a(_a, _b) {
 	array_sort(_a, true);

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"_2016_01_NoTimeforaTaxicab",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"_2016_01_NoTimeforaTaxicab",
+  "parent":{
+    "name":"2016",
+    "path":"folders/Solutions/2016.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
