@@ -1,5 +1,3 @@
 
-function aoc() {
-	_2018_01();
-	game_end();
-}
+_2024_02();
+game_end();

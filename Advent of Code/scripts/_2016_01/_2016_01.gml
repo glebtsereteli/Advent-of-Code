@@ -1,7 +1,6 @@
 
 function _2016_01() {
-	var _input = input("2016/2016_01.txt");
-	var _sequence = string_split(_input, ", ", true);
+	var _sequence = string_split(input("2016/2016_01.txt"), ", ", true);
 	print($"{_2016_01a(_sequence)}, {_2016_01b(_sequence)}");
 }
 function _2016_01a(_sequence) {

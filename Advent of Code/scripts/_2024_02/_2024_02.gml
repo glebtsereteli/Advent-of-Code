@@ -1,10 +1,7 @@
 
 function _2024_02() {
-	var _reports = input_lines("2024/2024_02_RedNoseReports.txt");
-	_reports = array_map(_reports, function(_report) {
-		return array_map(string_split(_report, " ", true), function(_level) {
-			return real(_level);
-		});
+	var _reports = array_map(input_lines("2024/2024_02.txt"), function(_report) {
+		return array_map(string_split(_report, " ", true), real);
 	});
 	print($"{_2024_02a(_reports)}, {_2024_02b(_reports)}");
 }
