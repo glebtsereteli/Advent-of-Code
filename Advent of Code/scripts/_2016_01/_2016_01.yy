@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"_2023_01_Trebuchet",
+  "%Name":"_2016_01",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"_2023_01_Trebuchet",
+  "name":"_2016_01",
   "parent":{
-    "name":"2023",
-    "path":"folders/Solutions/2023.yy",
+    "name":"2016",
+    "path":"folders/Solutions/2016.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

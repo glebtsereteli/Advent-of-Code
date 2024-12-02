@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"_2015_01_NotQuiteLisp",
+  "%Name":"_2024_01",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"_2015_01_NotQuiteLisp",
+  "name":"_2024_01",
   "parent":{
-    "name":"2015",
-    "path":"folders/Solutions/2015.yy",
+    "name":"2024",
+    "path":"folders/Solutions/2024.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

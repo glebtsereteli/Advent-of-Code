@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"_2024_02_RedNosedReports",
+  "%Name":"_2015_01",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"_2024_02_RedNosedReports",
+  "name":"_2015_01",
   "parent":{
-    "name":"2024",
-    "path":"folders/Solutions/2024.yy",
+    "name":"2015",
+    "path":"folders/Solutions/2015.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

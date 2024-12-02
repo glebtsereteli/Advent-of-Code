@@ -1,6 +1,6 @@
 
 function _2015_01() {
-	var _input = input("2015/2015_01_NotQuiteLisp.txt");
+	var _input = input("2015/2015_01.txt");
 	print($"{_2015_01a(_input)}, {_2015_01b(_input)}");
 }
 function _2015_01a(_input) {
