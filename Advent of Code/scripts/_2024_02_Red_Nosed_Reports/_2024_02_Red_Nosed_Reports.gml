@@ -6,24 +6,34 @@ function _2024_02() {
 			return real(_level);
 		});
 	});
-	show_debug_message(_2024_02a(_reports));
+	print(_2024_02a(_reports));
+	print(_2024_02b(_reports));
 }
 function _2024_02a(_reports) {
-	return array_filter_ext(_reports, function(_report) {
-		var _dir = undefined;
-		var _i = 0; repeat (array_length(_report) - 1) {
-			var _la = _report[_i];
-			var _lb = _report[_i + 1];
-			var _delta = _la - _lb;
-			var _idir = sign(_delta);
-			if (abs(_delta) > 3) return false;
-			if (sign(_dir ?? _idir) != _idir) return false;
-			_dir = _idir;
+	return array_filter_ext(variable_clone(_reports), _2024_02_is_safe);
+}
+function _2024_02b(_reports) {
+	return array_filter_ext(variable_clone(_reports), function(_report) {
+		var _i = 0; repeat (array_length(_report)) {
+			var _ireport = variable_clone(_report);
+			array_delete(_ireport, _i, 1);
+			if (_2024_02_is_safe(_ireport)) {
+				return true;
+			}
 			_i++;
 		}
-		return true;
+		return false;
 	});
 }
-function _2024_02b() {
-	
+function _2024_02_is_safe(_report) {
+	var _dir = undefined;
+	var _i = 0; repeat (array_length(_report) - 1) {
+		var _delta = _report[_i] - _report[_i + 1];
+		var _idir = sign(_delta);
+		if (abs(_delta) > 3) return false;
+		if (sign(_dir ?? _idir) != _idir) return false;
+		_dir = _idir;
+		_i++;
+	}
+	return true;
 }
