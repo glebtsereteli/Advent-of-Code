@@ -1,7 +1,4 @@
 
-// 20XX/XX: 
-// https://adventofcode.com/20XX/day/XX
-
 function _20XX_XX() {
 	
 }

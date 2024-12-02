@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"_2024_01_HistorianHysteria",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"_2024_01_HistorianHysteria",
+  "parent":{
+    "name":"2024",
+    "path":"folders/Solutions/2024.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

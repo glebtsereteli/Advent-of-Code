@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"_2024_01_Historian_Hysteria",
+  "%Name":"_2024_02_RedNosedReports",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"_2024_01_Historian_Hysteria",
+  "name":"_2024_02_RedNosedReports",
   "parent":{
     "name":"2024",
     "path":"folders/Solutions/2024.yy",

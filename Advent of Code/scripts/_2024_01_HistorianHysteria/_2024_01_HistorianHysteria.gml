@@ -1,6 +1,6 @@
 
 function _2024_01() {
-	var _input = input_lines("2024/2024_01_Historian_Hysteria.txt");
+	var _input = input_lines("2024/2024_01_HistorianHysteria.txt");
 	var _n = array_length(_input);
 	var _a = array_create(_n);
 	var _b = array_create(_n);
@@ -10,8 +10,7 @@ function _2024_01() {
 		_b[_i] = real(_pair[1]);
 		_i++;
 	}
-	print(_2024_01a(_a, _b));
-	print(_2024_01b(_a, _b));
+	print($"{_2024_01a(_input)}, {_2024_01b(_input)}");
 }
 function _2024_01a(_a, _b) {
 	array_sort(_a, true);

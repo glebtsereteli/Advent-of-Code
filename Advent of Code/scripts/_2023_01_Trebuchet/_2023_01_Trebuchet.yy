@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"_2015_01_Not_Quite_Lisp",
+  "%Name":"_2023_01_Trebuchet",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"_2015_01_Not_Quite_Lisp",
+  "name":"_2023_01_Trebuchet",
   "parent":{
-    "name":"2015",
-    "path":"folders/Solutions/2015.yy",
+    "name":"2023",
+    "path":"folders/Solutions/2023.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

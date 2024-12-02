@@ -8,7 +8,7 @@ function input(_filename) {
 function input_lines(_filename) {
 	return string_split(input(_filename), "\n");
 }
-function print(_value, _loud = false) {
+function print(_value, _loud = true) {
 	show_debug_message(_value);
 	if (_loud) {
 		show_message(_value);

@@ -1,13 +1,12 @@
 
 function _2024_02() {
-	var _reports = input_lines("2024/2024_02_Red_Nose_Reports.txt");
+	var _reports = input_lines("2024/2024_02_RedNoseReports.txt");
 	_reports = array_map(_reports, function(_report) {
 		return array_map(string_split(_report, " ", true), function(_level) {
 			return real(_level);
 		});
 	});
-	print(_2024_02a(_reports));
-	print(_2024_02b(_reports));
+	print($"{_2024_02a(_reports)}, {_2024_02b(_reports)}");
 }
 function _2024_02a(_reports) {
 	return array_filter_ext(variable_clone(_reports), _2024_02_is_safe);
