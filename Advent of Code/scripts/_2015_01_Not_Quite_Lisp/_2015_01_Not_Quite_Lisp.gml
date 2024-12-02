@@ -1,7 +1,4 @@
 
-// 2015/01: Not Quite Lisp
-// https://adventofcode.com/2015/day/1
-
 function _2015_01() {
 	var _input = input("2015/2015_01_Not_Quite_Lisp.txt");
 	show_debug_message(_2015_01a(_input));

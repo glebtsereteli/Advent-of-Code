@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"_2024_02_",
+  "%Name":"_2024_02_Red_Nosed_Reports",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"_2024_02_",
+  "name":"_2024_02_Red_Nosed_Reports",
   "parent":{
     "name":"2024",
     "path":"folders/Solutions/2024.yy",
