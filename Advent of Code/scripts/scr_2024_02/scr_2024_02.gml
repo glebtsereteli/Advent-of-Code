@@ -3,12 +3,12 @@ function _2024_02() {
 	var _reports = array_map(input_array("2024/2024_02.txt"), function(_report) {
 		return array_map(string_split(_report, " ", true), real);
 	});
-	print($"{_2024_02a(_reports)}, {_2024_02b(_reports)}");
+	print($"{_2024_02p1(_reports)}, {_2024_02p2(_reports)}");
 }
-function _2024_02a(_reports) {
+function _2024_02p1(_reports) {
 	return array_filter_ext(variable_clone(_reports), _2024_02_is_safe);
 }
-function _2024_02b(_reports) {
+function _2024_02p2(_reports) {
 	return array_filter_ext(variable_clone(_reports), function(_report) {
 		var _i = 0; repeat (array_length(_report)) {
 			var _ireport = variable_clone(_report);

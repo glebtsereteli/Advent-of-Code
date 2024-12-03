@@ -10,9 +10,9 @@ function _2024_01() {
 		_b[_i] = real(_pair[1]);
 		_i++;
 	}
-	print($"{_2024_01a(_a, _b)}, {_2024_01b(_a, _b)}");
+	print($"{_2024_01p1(_a, _b)}, {_2024_01p2(_a, _b)}");
 }
-function _2024_01a(_a, _b) {
+function _2024_01p1(_a, _b) {
 	array_sort(_a, true);
 	array_sort(_b, true);
 	var _total = 0;
@@ -22,7 +22,7 @@ function _2024_01a(_a, _b) {
 	}
 	return _total;
 }
-function _2024_01b(_a, _b) {
+function _2024_01p2(_a, _b) {
 	var _freq = DS_MAP;
 	var _n = array_length(_a);
 	var _i = 0; repeat (_n) {

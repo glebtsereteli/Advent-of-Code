@@ -1,9 +1,9 @@
 
 function _2023_01() {
 	var _lines = input_array("2023/2023_01.txt");
-	print($"{_2023_01a(_lines)}, {_2023_01b(_lines)}");
+	print($"{_2023_01p1(_lines)}, {_2023_01p2(_lines)}");
 }
-function _2023_01a(_lines) {
+function _2023_01p1(_lines) {
 	var _calibration = 0;
 	var _i = 0; repeat (array_length(_lines)) {
 		var _numbers = string_digits(_lines[_i]);
@@ -12,7 +12,7 @@ function _2023_01a(_lines) {
 	}
 	return _calibration;
 }
-function _2023_01b(_lines) {
+function _2023_01p2(_lines) {
 	var _numbers = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
 	var _nnumbers = array_length(_numbers);
 	var _calibration = 0;

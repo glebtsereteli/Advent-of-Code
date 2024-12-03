@@ -1,12 +1,12 @@
 
 function _2015_01() {
 	var _input = input("2015/2015_01.txt");
-	print($"{_2015_01a(_input)}, {_2015_01b(_input)}");
+	print($"{_2015_01p1(_input)}, {_2015_01p2(_input)}");
 }
-function _2015_01a(_input) {
+function _2015_01p1(_input) {
 	return (string_count("(", _input) - string_count(")", _input));
 }
-function _2015_01b(_input) {
+function _2015_01p2(_input) {
 	var _floor = 0;
 	var _i = 1; repeat (string_length(_input)) {
 		var _char = string_char_at(_input, _i);

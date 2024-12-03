@@ -1,9 +1,9 @@
 
 function _2016_01() {
 	var _sequence = string_split(input("2016/2016_01.txt"), ", ", true);
-	print($"{_2016_01a(_sequence)}, {_2016_01b(_sequence)}");
+	print($"{_2016_01p1(_sequence)}, {_2016_01p2(_sequence)}");
 }
-function _2016_01a(_sequence) {
+function _2016_01p1(_sequence) {
 	var _x = 0;
 	var _y = 0;
 	var _dir = 90;
@@ -18,7 +18,7 @@ function _2016_01a(_sequence) {
 	}
 	return (abs(_x) + abs(_y));
 }
-function _2016_01b(_sequence) {
+function _2016_01p2(_sequence) {
 	var _x = 0;
 	var _y = 0;
 	var _dir = 90;
