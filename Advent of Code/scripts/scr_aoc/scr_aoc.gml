@@ -1,3 +1,5 @@
 
-_2024_02();
-game_end();
+function aoc() {
+	_2024_02();
+	game_end();
+}

@@ -23,7 +23,7 @@ function _2024_01a(_a, _b) {
 	return _total;
 }
 function _2024_01b(_a, _b) {
-	var _freq = ds_map_create();
+	var _freq = DS_MAP;
 	var _n = array_length(_a);
 	var _i = 0; repeat (_n) {
 		var _bn = _b[_i];
@@ -41,6 +41,5 @@ function _2024_01b(_a, _b) {
 		}
 		_i++;
 	}
-	ds_map_destroy(_freq);
 	return _total;
 }

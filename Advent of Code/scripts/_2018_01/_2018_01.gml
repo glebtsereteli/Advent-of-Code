@@ -9,13 +9,12 @@ function _2018_01a(_pool) {
 	});
 }
 function _2018_01b(_pool) {
-	var _prev = ds_map_create();
+	var _prev = DS_MAP;
 	var _freq = 0;
 	var _n = array_length(_pool);
 	var _i = 0; while (true) {
 		_freq += _pool[_i];
 		if (ds_map_exists(_prev, _freq)) {
-			ds_map_destroy(_prev);
 			return _freq;
 		}
 		else {

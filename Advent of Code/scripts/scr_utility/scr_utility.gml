@@ -1,4 +1,7 @@
 
+global.__ds_map = ds_map_create();
+#macro DS_MAP global.__ds_map; ds_map_clear(global.__ds_map);
+
 function input(_filename) {
 	var _buffer = buffer_load(_filename);
 	var _string = buffer_read(_buffer, buffer_text);

@@ -22,7 +22,7 @@ function _2016_01b(_sequence) {
 	var _x = 0;
 	var _y = 0;
 	var _dir = 90;
-	var _visited = ds_map_create();
+	var _visited = DS_MAP;
 	var _i = 0; repeat (array_length(_sequence)) {
 		var _step = _sequence[_i];
 		_dir += (string_char_at(_step, 1) == "L" ? +90 : -90);
@@ -31,13 +31,10 @@ function _2016_01b(_sequence) {
 			_y += lengthdir_y(1, _dir);
 			var _key = $"{_x}x{_y}";
 			if (ds_map_exists(_visited, _key)) {
-				ds_map_destroy(_visited);
 				return (abs(_x) + abs(_y));
 			}
 			_visited[? _key] = true;
 		}
 		_i++;
 	}
-	ds_map_destroy(_visited);
-	return undefined;
 }
