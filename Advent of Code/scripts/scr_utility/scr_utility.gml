@@ -8,7 +8,7 @@ function input(_filename) {
 	buffer_delete(_buffer);
 	return _string;
 }
-function input_lines(_filename) {
+function input_array(_filename) {
 	return string_split(input(_filename), "\n");
 }
 function print(_value, _loud = true) {

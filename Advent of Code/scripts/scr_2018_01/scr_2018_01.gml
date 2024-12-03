@@ -1,6 +1,6 @@
 
 function _2018_01() {
-	var _pool = array_map(input_lines("2018/2018_01.txt"), real);
+	var _pool = array_map(input_array("2018/2018_01.txt"), real);
 	print($"{_2018_01a(_pool)}, {_2018_01b(_pool)}");
 }
 function _2018_01a(_pool) {

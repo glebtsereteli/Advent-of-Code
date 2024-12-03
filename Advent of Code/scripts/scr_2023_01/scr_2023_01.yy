@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"_2017_01",
+  "%Name":"scr_2023_01",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"_2017_01",
+  "name":"scr_2023_01",
   "parent":{
-    "name":"2017",
-    "path":"folders/Solutions/2017.yy",
+    "name":"2023",
+    "path":"folders/Solutions/2023.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

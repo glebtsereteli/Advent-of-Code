@@ -1,6 +1,6 @@
 
 function _2023_01() {
-	var _lines = input_lines("2023/2023_01.txt");
+	var _lines = input_array("2023/2023_01.txt");
 	print($"{_2023_01a(_lines)}, {_2023_01b(_lines)}");
 }
 function _2023_01a(_lines) {

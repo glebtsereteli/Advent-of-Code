@@ -1,6 +1,6 @@
 
 function _2024_01() {
-	var _input = input_lines("2024/2024_01.txt");
+	var _input = input_array("2024/2024_01.txt");
 	var _n = array_length(_input);
 	var _a = array_create(_n);
 	var _b = array_create(_n);
