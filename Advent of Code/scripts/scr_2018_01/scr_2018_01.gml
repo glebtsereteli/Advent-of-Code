@@ -1,7 +1,7 @@
 
 function _2018_01() {
 	var _pool = array_map(input_array("2018/2018_01.txt"), real);
-	print($"{_2018_01p1(_pool)}, {_2018_01p2(_pool)}");
+	test("2018/01: Chronal Calibration", _2018_01p1, _2018_01p2, _pool);
 }
 function _2018_01p1(_pool) {
 	return array_reduce(_pool, function(_a, _b) {

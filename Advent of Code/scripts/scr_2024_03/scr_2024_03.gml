@@ -1,7 +1,7 @@
 
 function _2024_03() {
 	var _input = input("2024/2024_03.txt");
-	print($"{_2024_03p1(_input)}, {_2024_03p2(_input)}");
+	test("2024/03: Mull It Over", _2024_03p1, _2024_03p2, _input);
 }
 function _2024_03p1(_input) {
 	var _pos = 1;
@@ -10,6 +10,7 @@ function _2024_03p1(_input) {
 	while (true) {
 		var _i = string_pos_ext("mul(", _input, _pos);
 		if (_i == 0) break;
+		
 		var _a = ""
 		var _b = "";
 		var _left = true;
@@ -44,7 +45,7 @@ function _2024_03p2(_input) {
 		if (_i == 0) break;
 		
 		if (string_last_pos_ext("don't()", _input, _i) > string_last_pos_ext("do()", _input, _i)) {
-			_pos = _i + 7; // "don't()" length.
+			_pos = _i + 7; // Skip "don't()".
 			continue;
 		}
 		

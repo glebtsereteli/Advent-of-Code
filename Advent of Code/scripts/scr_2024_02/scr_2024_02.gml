@@ -3,7 +3,7 @@ function _2024_02() {
 	var _reports = array_map(input_array("2024/2024_02.txt"), function(_report) {
 		return array_map(string_split(_report, " ", true), real);
 	});
-	print($"{_2024_02p1(_reports)}, {_2024_02p2(_reports)}");
+	test("2024/02: Red-Nosed Reports", _2024_02p1, _2024_02p2, _reports);
 }
 function _2024_02p1(_reports) {
 	return array_filter_ext(variable_clone(_reports), _2024_02_is_safe);

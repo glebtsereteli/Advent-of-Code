@@ -10,7 +10,7 @@ function _2024_01() {
 		_b[_i] = real(_pair[1]);
 		_i++;
 	}
-	print($"{_2024_01p1(_a, _b)}, {_2024_01p2(_a, _b)}");
+	test("2024/01: Historian Hysteria", _2024_01p1, _2024_01p2, _a, _b);
 }
 function _2024_01p1(_a, _b) {
 	array_sort(_a, true);

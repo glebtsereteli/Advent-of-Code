@@ -1,7 +1,7 @@
 
 function _2015_01() {
 	var _input = input("2015/2015_01.txt");
-	print($"{_2015_01p1(_input)}, {_2015_01p2(_input)}");
+	test("2015/01: Not Quite Lisp", _2015_01p1, _2015_01p2, _input);
 }
 function _2015_01p1(_input) {
 	return (string_count("(", _input) - string_count(")", _input));
