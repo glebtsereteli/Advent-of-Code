@@ -25,8 +25,8 @@ function _2024_02_is_safe(_report) {
 	var _dir = undefined;
 	var _i = 0; repeat (array_length(_report) - 1) {
 		var _delta = _report[_i] - _report[_i + 1];
-		var _idir = sign(_delta);
 		if ((_delta == 0) or (abs(_delta) > 3)) return false;
+		var _idir = sign(_delta);
 		if (sign(_dir ?? _idir) != _idir) return false;
 		_dir = _idir;
 		_i++;
