@@ -9,7 +9,7 @@ global.__ds_map = ds_map_create();
 
 function input_string(_filename) {
 	var _buffer = buffer_load(_filename);
-	var _string = buffer_read(_buffer, buffer_string);
+	var _string = buffer_read(_buffer, buffer_text);
 	buffer_delete(_buffer);
 	return _string;
 }
