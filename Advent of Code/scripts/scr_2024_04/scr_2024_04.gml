@@ -1,6 +1,6 @@
 
 function _2024_04() {
-	var _lines = input_array("2024/2024_04.txt");
+	var _lines = input_array("2024/2024_04.aoc");
 	test("2024/04: Ceres Search", _2024_04p1, _2024_04p2, _lines);
 }
 function _2024_04p1(_lines) {

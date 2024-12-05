@@ -1,6 +1,6 @@
 
 function _2024_05() {
-	var _input = input_string("2024/2024_05.txt");
+	var _input = input_string("2024/2024_05.aoc");
 	var _parts = string_split(string_replace_all(_input, "\r\n", "\n"), "\n\n");
 	var _rules = DS_MAP;
 	with ({_rules}) array_foreach(string_split(_parts[0], "\n"), function(_rule) {
