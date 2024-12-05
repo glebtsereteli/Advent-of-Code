@@ -1,6 +1,6 @@
 
 function _2024_03() {
-	var _input = input("2024/2024_03.txt");
+	var _input = input_string("2024/2024_03.txt");
 	test("2024/03: Mull It Over", _2024_03p1, _2024_03p2, _input);
 }
 function _2024_03p1(_input) {
@@ -11,12 +11,12 @@ function _2024_03p1(_input) {
 		var _i = string_pos_ext("mul(", _input, _pos);
 		if (_i == 0) break;
 		
-		var _a = ""
+		var _a = "";
 		var _b = "";
 		var _left = true;
 		var _unfinished = true;
 		_i += 4; // Skip "mul(".
-		repeat (12) { // Max length.
+		repeat (8) { // Max length.
 			var _byte = string_byte_at(_input, _i);
 			if (not array_contains(_filter, _byte)) break;
 			if (_byte == 44) _left = false; // ,
@@ -54,7 +54,7 @@ function _2024_03p2(_input) {
 		var _left = true;
 		var _unfinished = true;
 		_i += 4; // Skip "mul(".
-		repeat (12) { // Max length.
+		repeat (8) { // Max length.
 			var _byte = string_byte_at(_input, _i);
 			if (not array_contains(_filter, _byte)) break;
 			if (_byte == 44) _left = false; // ,

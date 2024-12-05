@@ -7,14 +7,19 @@ global.__t = 0;
 global.__ds_map = ds_map_create();
 #macro DS_MAP global.__ds_map; ds_map_clear(global.__ds_map);
 
-function input(_filename) {
+function input_string(_filename) {
 	var _buffer = buffer_load(_filename);
-	var _string = buffer_read(_buffer, buffer_text);
+	var _string = buffer_read(_buffer, buffer_string);
 	buffer_delete(_buffer);
 	return _string;
 }
 function input_array(_filename) {
-	return string_split(input(_filename), "\n");
+	return input_string_to_array(input_string(_filename));
+}
+function input_string_to_array(_string) {
+	return array_map(string_split(_string, "\n", true), function(_string) {
+		return string_trim(_string);
+	});	
 }
 function print(_value, _loud = false) {
 	show_debug_message(_value);

@@ -1,6 +1,6 @@
 
 function _2015_01() {
-	var _input = input("2015/2015_01.txt");
+	var _input = input_string("2015/2015_01.txt");
 	test("2015/01: Not Quite Lisp", _2015_01p1, _2015_01p2, _input);
 }
 function _2015_01p1(_input) {
