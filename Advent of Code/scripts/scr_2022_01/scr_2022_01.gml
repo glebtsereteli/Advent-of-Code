@@ -1,8 +1,7 @@
 
 function _2022_01() {
-	var _input = input_string("2022/2022_01.aoc");
-	_input = string_replace_all(_input, "\r\n", "\n");
-	var _calories = array_map(string_split(_input, "\n\n"), function(_calories) {
+	var _input = input_linesep("2022/2022_01.aoc");
+	var _calories = array_map(_input, function(_calories) {
 		return array_map(string_split(_calories, "\n"), real);
 	});
 	test("2022/01: Calorie Counting", _2022_01p1, _2022_01p2, _calories);

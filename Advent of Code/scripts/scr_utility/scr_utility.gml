@@ -21,6 +21,11 @@ function input_string_to_array(_string) {
 		return string_trim(_string);
 	});	
 }
+function input_linesep(_filename) {
+	var _input = input_string(_filename);
+	_input = string_replace_all(_input, "\r\n", "\n");
+	return string_split(_input, "\n\n");
+}
 function print(_value, _loud = false) {
 	show_debug_message(_value);
 	if (_loud) {

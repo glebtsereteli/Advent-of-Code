@@ -1,12 +1,11 @@
 
 function _2024_05() {
-	var _input = input_string("2024/2024_05.aoc");
-	var _parts = string_split(string_replace_all(_input, "\r\n", "\n"), "\n\n");
+	var _input = input_linesep("2024/2024_05.aoc");
 	var _rules = DS_MAP;
-	with ({_rules}) array_foreach(string_split(_parts[0], "\n"), function(_rule) {
+	with ({_rules}) array_foreach(string_split(_input[0], "\n"), function(_rule) {
 		_rules[? _rule] = true;
 	});
-	var _updates = array_map(string_split(_parts[1], "\n"), function(_update) {
+	var _updates = array_map(string_split(_input[1], "\n"), function(_update) {
 		return string_split(_update, ",", true);
 	});
 	test("2024/05: Print Queue", _2024_05p1, _2024_05p2, _rules, _updates);
