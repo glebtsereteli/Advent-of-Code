@@ -35,13 +35,16 @@ function print(_value, _loud = false) {
 		show_message(_value);
 	}
 }
-function test(_label, _p1, _p2, _input1, _input2 = undefined) {
+function test(_label, _p1, _p2, _inputs) {
+	if (not is_array(_inputs)) {
+		_inputs = [_inputs];
+	}
 	var _didiver = string_repeat("=", 32);
 	BENCH_START;
-	var _r1 = _p1(_input1, _input2);
+	var _r1 = script_execute_ext(_p1, _inputs);
 	var _message = $"{_didiver}\n# {_label}\n# Part 1: {_r1} - {BENCH_END}ms.";
 	BENCH_START
-	var _r2 = _p2(_input1, _input2);
+	var _r2 = script_execute_ext(_p2, _inputs);
 	_message += $"\n# Part 2: {_r2} - {BENCH_END}ms.\n{_didiver}";
 	show_debug_message($"\n{_message}\n");
 	show_message(_message);
@@ -61,4 +64,13 @@ function array_sum(_array) {
 }
 function array_real(_array) {
 	return array_map(_array, real);
+}
+function string_explode(_string) {
+	var _n = string_length(_string);
+	var _array = array_create(_n);
+	var _i = 0; repeat (_n) {
+		_array[_i] = string_char_at(_string, _i + 1);
+		_i++;
+	}
+	return _array;
 }

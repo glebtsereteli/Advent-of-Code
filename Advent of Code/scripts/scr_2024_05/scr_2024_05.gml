@@ -8,7 +8,7 @@ function _2024_05() {
 	var _updates = array_map(string_split(_input[1], "\n"), function(_update) {
 		return string_split(_update, ",", true);
 	});
-	test("2024/05: Print Queue", _2024_05p1, _2024_05p2, _rules, _updates);
+	test("2024/05: Print Queue", _2024_05p1, _2024_05p2, [_rules, _updates]);
 }
 function _2024_05p1(_rules, _updates) {
 	var _total = 0;
