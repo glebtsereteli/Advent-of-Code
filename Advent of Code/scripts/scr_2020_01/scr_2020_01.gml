@@ -20,7 +20,7 @@ function _2020_01p2(_numbers) {
 	    for (var _j = _i + 1; _j < _n; _j++) {
 	        var _b = _numbers[_j];
 	        var _target = 2020 - (_a + _b);
-			if (_target <= 0) continue;
+			if (_target < 1) continue;
 	        var _seen = DS_MAP;
 	        for (var _k = _j + 1; _k < _n; _k++) {
 	            var _c = _numbers[_k];
