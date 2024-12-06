@@ -28,14 +28,13 @@ function _2024_05p1(_rules, _updates) {
 	return _total;
 }
 function _2024_05p2(_rules, _updates) {
-	var _sort = method({_rules}, function(_a, _b) {
-		return (ds_map_exists(_rules, $"{_a}|{_b}") ? -1 : 1);
-	});
-	var _total = 0;
-	for (var _i = 0, _n = array_length(_updates); _i < _n; _i++) {
-		var _update = _updates[_i];
+	var _context = { total: 0, _rules };
+	array_foreach(_updates, method(_context, function(_update) {
+		static _sort = function(_a, _b) {
+			return (ds_map_exists(_rules, $"{_a}|{_b}") ? -1 : 1);
+		};
 		array_sort(_update, _sort);
-		_total += _update[array_length(_update) div 2];
-	}
-	return _total;
+		total += _update[array_length(_update) div 2];
+	}));
+	return _context.total;
 }

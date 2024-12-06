@@ -13,8 +13,8 @@
   ],
   "name":"rm_aoc",
   "parent":{
-    "name":"Utility",
-    "path":"folders/Utility.yy",
+    "name":"Setup",
+    "path":"folders/Setup.yy",
   },
   "parentRoom":null,
   "physicsSettings":{
