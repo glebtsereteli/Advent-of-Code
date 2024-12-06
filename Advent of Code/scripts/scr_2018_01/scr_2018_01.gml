@@ -4,9 +4,7 @@ function _2018_01() {
 	test("2018/01: Chronal Calibration", _2018_01p1, _2018_01p2, _pool);
 }
 function _2018_01p1(_pool) {
-	return array_reduce(_pool, function(_a, _b) {
-		return (_a + _b);
-	});
+	return array_sum(_pool);
 }
 function _2018_01p2(_pool) {
 	var _prev = DS_MAP;

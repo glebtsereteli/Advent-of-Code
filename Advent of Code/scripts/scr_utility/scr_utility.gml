@@ -38,3 +38,16 @@ function test(_label, _p1, _p2, _input1, _input2 = undefined) {
 	show_debug_message($"\n{_message}\n");
 	show_message(_message);
 }
+
+function sum() {
+	var _sum = 0;
+	var _i = 0; repeat (argument_count) {
+		_sum += argument[_i++];
+	}
+	return _sum;
+}
+function array_sum(_array) {
+	return array_reduce(_array, function(_a, _b) {
+		return (_a + _b);
+	});
+}

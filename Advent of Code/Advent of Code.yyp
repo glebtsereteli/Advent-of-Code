@@ -10,7 +10,7 @@
   },
   "defaultScriptType":1,
   "Folders":[
-    {"$GMFolder":"","%Name":"Utility","folderPath":"folders/Utility.yy","name":"Utility","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"2022","folderPath":"folders/Solutions/2022.yy","name":"2022","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Setup","folderPath":"folders/Setup.yy","name":"Setup","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Solutions","folderPath":"folders/Solutions.yy","name":"Solutions","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"2015","folderPath":"folders/Solutions/2015.yy","name":"2015","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -20,6 +20,7 @@
     {"$GMFolder":"","%Name":"2019","folderPath":"folders/Solutions/2019.yy","name":"2019","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"2023","folderPath":"folders/Solutions/2023.yy","name":"2023","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"2024","folderPath":"folders/Solutions/2024.yy","name":"2024","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Utility","folderPath":"folders/Utility.yy","name":"Utility","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":"2015_01.aoc","CopyToMask":-1,"filePath":"datafiles/2015","name":"2015_01.aoc","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
@@ -27,6 +28,8 @@
     {"$GMIncludedFile":"","%Name":"2017_01.aoc","CopyToMask":-1,"filePath":"datafiles/2017","name":"2017_01.aoc","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"2018_01.aoc","CopyToMask":-1,"filePath":"datafiles/2018","name":"2018_01.aoc","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"2019_01.aoc","CopyToMask":-1,"filePath":"datafiles/2019","name":"2019_01.aoc","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"2022_01_Demo.aoc","CopyToMask":-1,"filePath":"datafiles/2022","name":"2022_01_Demo.aoc","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"2022_01.aoc","CopyToMask":-1,"filePath":"datafiles/2022","name":"2022_01.aoc","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"2023_01_DemoA.aoc","CopyToMask":-1,"filePath":"datafiles/2023","name":"2023_01_DemoA.aoc","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"2023_01_DemoB.aoc","CopyToMask":-1,"filePath":"datafiles/2023","name":"2023_01_DemoB.aoc","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"2023_01.aoc","CopyToMask":-1,"filePath":"datafiles/2023","name":"2023_01.aoc","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
@@ -54,6 +57,7 @@
     {"id":{"name":"scr_2017_01","path":"scripts/scr_2017_01/scr_2017_01.yy",},},
     {"id":{"name":"scr_2018_01","path":"scripts/scr_2018_01/scr_2018_01.yy",},},
     {"id":{"name":"scr_2019_01","path":"scripts/scr_2019_01/scr_2019_01.yy",},},
+    {"id":{"name":"scr_2022_01","path":"scripts/scr_2022_01/scr_2022_01.yy",},},
     {"id":{"name":"scr_2023_01","path":"scripts/scr_2023_01/scr_2023_01.yy",},},
     {"id":{"name":"scr_2024_01","path":"scripts/scr_2024_01/scr_2024_01.yy",},},
     {"id":{"name":"scr_2024_02","path":"scripts/scr_2024_02/scr_2024_02.yy",},},
