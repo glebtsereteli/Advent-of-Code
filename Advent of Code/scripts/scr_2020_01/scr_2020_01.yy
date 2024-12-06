@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_2020_01",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_2020_01",
+  "parent":{
+    "name":"2020",
+    "path":"folders/Solutions/2020.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

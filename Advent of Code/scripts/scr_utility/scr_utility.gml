@@ -16,6 +16,9 @@ function input_string(_filename) {
 function input_array(_filename) {
 	return input_string_to_array(input_string(_filename));
 }
+function input_array_real(_filename) {
+	return array_map(input_array(_filename), real);
+}
 function input_string_to_array(_string) {
 	return array_map(string_split(_string, "\n", true), function(_string) {
 		return string_trim(_string);
@@ -55,4 +58,7 @@ function array_sum(_array) {
 	return array_reduce(_array, function(_a, _b) {
 		return (_a + _b);
 	});
+}
+function array_real(_array) {
+	return array_map(_array, real);
 }

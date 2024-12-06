@@ -1,6 +1,6 @@
 
 function _2018_01() {
-	var _pool = array_map(input_array("2018/2018_01.aoc"), real);
+	var _pool = input_array_real("2018/2018_01.aoc");
 	test("2018/01: Chronal Calibration", _2018_01p1, _2018_01p2, _pool);
 }
 function _2018_01p1(_pool) {

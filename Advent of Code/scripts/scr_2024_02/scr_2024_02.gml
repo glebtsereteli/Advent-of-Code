@@ -1,7 +1,7 @@
 
 function _2024_02() {
 	var _reports = array_map(input_array("2024/2024_02.aoc"), function(_report) {
-		return array_map(string_split(_report, " ", true), real);
+		return array_real(string_split(_report, " ", true));
 	});
 	test("2024/02: Red-Nosed Reports", _2024_02p1, _2024_02p2, _reports);
 }
