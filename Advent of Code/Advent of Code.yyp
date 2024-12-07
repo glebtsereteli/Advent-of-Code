@@ -26,6 +26,7 @@
   ],
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":"2015_01.aoc","CopyToMask":-1,"filePath":"datafiles/2015","name":"2015_01.aoc","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"2015_02.aoc","CopyToMask":-1,"filePath":"datafiles/2015","name":"2015_02.aoc","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"2016_01.aoc","CopyToMask":-1,"filePath":"datafiles/2016","name":"2016_01.aoc","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"2017_01.aoc","CopyToMask":-1,"filePath":"datafiles/2017","name":"2017_01.aoc","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"2018_01.aoc","CopyToMask":-1,"filePath":"datafiles/2018","name":"2018_01.aoc","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
@@ -63,6 +64,7 @@
   "resources":[
     {"id":{"name":"rm_aoc","path":"rooms/rm_aoc/rm_aoc.yy",},},
     {"id":{"name":"scr_2015_01","path":"scripts/scr_2015_01/scr_2015_01.yy",},},
+    {"id":{"name":"scr_2015_02","path":"scripts/scr_2015_02/scr_2015_02.yy",},},
     {"id":{"name":"scr_2016_01","path":"scripts/scr_2016_01/scr_2016_01.yy",},},
     {"id":{"name":"scr_2017_01","path":"scripts/scr_2017_01/scr_2017_01.yy",},},
     {"id":{"name":"scr_2018_01","path":"scripts/scr_2018_01/scr_2018_01.yy",},},
