@@ -13,54 +13,55 @@ function _2024_07() {
 	test("2024/07: Bridge Repair", _2024_07p1, _2024_07p2, [_equations]);
 }
 function _2024_07p1(_equations) {
-	var _total = 0;
-	for (var _i = 0; _i < array_length(_equations); _i++) {
-		var _eq = _equations[_i];
-		var _ops = _eq.operands;
-		var _n = array_length(_ops);
-		var _j = 0; repeat (power(2, _n)) {
-			var _jj = _j++;
-			var _result = _ops[0];
-			for (var _k = 1; _k < _n; _k++) {
-			    if ((_jj mod 2) == 0) {
-					_result += _ops[_k];	
+	with ({total:0}) {
+		array_foreach(_equations, function(_eq) {
+			var _ops = _eq.operands;
+			var _n = array_length(_ops);
+			var _j = 0; repeat (power(2, _n)) {
+				var _jj = _j++;
+				var _result = _ops[0];
+				var _k = 1; repeat (_n - 1) {
+				    if ((_jj mod 2) == 0) {
+						_result += _ops[_k];	
+					}
+				    else {
+						_result *= _ops[_k];
+					}
+					_jj = _jj div 2;
+					_k++;
 				}
-			    else {
-					_result *= _ops[_k];
+				if (_result == _eq.result) {
+					total += _result;
+					break;
 				}
-				_jj = _jj div 2;
 			}
-			if (_result == _eq.result) {
-				_total += _result;
-				break;
-			}
-		}
+		});
+		return total;
 	}
-	return _total;
 }
 function _2024_07p2(_equations) {
-	var _total = 0;
-	for (var _i = 0; _i < array_length(_equations); _i++) {
-	    var _eq = _equations[_i];
-	    var _ops = _eq.operands;
-	    var _n = array_length(_ops);
-	    var _j = 0; 
-	    repeat (power(3, _n - 1)) {
-	        var _jj = _j++;
-	        var _result = _ops[0];
-	        for (var _k = 1; _k < _n; _k++) {
-				switch (_jj mod 3) {
-					case 0: _result += _ops[_k]; break;
-					case 1: _result *= _ops[_k]; break;
-					case 2: _result = real($"{_result}{_ops[_k]}"); break;
-				}
-	            _jj = _jj div 3;
-	        }
-	        if (_result == _eq.result) {
-	            _total += _result;
-	            break;
-	        }
-	    }
+	with ({total:0}) {
+		array_foreach(_equations, function(_eq) {
+		    var _ops = _eq.operands;
+		    var _n = array_length(_ops) - 1;
+			var _j = 0; repeat (power(3, _n)) {
+		        var _jj = _j++;
+		        var _result = _ops[0];
+				var _k = 1; repeat (_n) {
+					switch (_jj mod 3) {
+						case 0: _result += _ops[_k]; break;
+						case 1: _result *= _ops[_k]; break;
+						case 2: _result = real($"{_result}{_ops[_k]}"); break;
+					}
+		            _jj = _jj div 3;
+					_k++;
+		        }
+		        if (_result == _eq.result) {
+		            total += _result;
+		            break;
+		        }
+		    }
+		});
+		return total;
 	}
-	return _total;
 }
