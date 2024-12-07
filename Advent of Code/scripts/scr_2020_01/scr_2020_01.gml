@@ -1,7 +1,7 @@
 
 function _2020_01() {
 	var _numbers = input_array_real("2020/2020_01.aoc");
-	test("2020/01: Report Repair", _2020_01p1, _2020_01p2, _numbers);
+	test("2020/01: Report Repair", _2020_01p1, _2020_01p2, [_numbers]);
 }
 function _2020_01p1(_numbers) {
 	var _seen = DS_MAP;

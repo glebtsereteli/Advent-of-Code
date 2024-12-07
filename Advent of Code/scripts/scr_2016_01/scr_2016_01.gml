@@ -1,7 +1,7 @@
 
 function _2016_01() {
 	var _sequence = string_split(input_string("2016/2016_01.aoc"), ", ", true);
-	test("2016/01: No Time for a Taxicab", _2016_01p1, _2016_01p2, _sequence);
+	test("2016/01: No Time for a Taxicab", _2016_01p1, _2016_01p2, [_sequence]);
 }
 function _2016_01p1(_sequence) {
 	var _x = 0;

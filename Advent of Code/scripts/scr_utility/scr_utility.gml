@@ -36,9 +36,6 @@ function print(_value, _loud = false) {
 	}
 }
 function test(_label, _p1, _p2, _inputs) {
-	if (not is_array(_inputs)) {
-		_inputs = [_inputs];
-	}
 	var _didiver = string_repeat("=", 32);
 	BENCH_START;
 	var _r1 = script_execute_ext(_p1, _inputs);
@@ -50,6 +47,9 @@ function test(_label, _p1, _p2, _inputs) {
 	show_message(_message);
 }
 
+function noop() {
+		
+}
 function sum() {
 	var _sum = 0;
 	var _i = 0; repeat (argument_count) {

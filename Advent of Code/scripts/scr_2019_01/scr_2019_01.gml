@@ -1,7 +1,7 @@
 
 function _2019_01() {
 	var _masses = input_array("2019/2019_01.aoc");
-	test("2019/01: The Tyranny of the Rocket Equation", _2019_01p1, _2019_01p2, _masses);
+	test("2019/01: The Tyranny of the Rocket Equation", _2019_01p1, _2019_01p2, [_masses]);
 }
 function _2019_01p1(_masses) {
 	var _fuel = 0;

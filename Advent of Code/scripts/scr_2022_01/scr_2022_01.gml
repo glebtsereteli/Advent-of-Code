@@ -4,7 +4,7 @@ function _2022_01() {
 	var _calories = array_map(_input, function(_calories) {
 		return array_real(string_split(_calories, "\n"));
 	});
-	test("2022/01: Calorie Counting", _2022_01p1, _2022_01p2, _calories);
+	test("2022/01: Calorie Counting", _2022_01p1, _2022_01p2, [_calories]);
 }
 function _2022_01p1(_calories) {
 	array_map_ext(_calories, array_sum);

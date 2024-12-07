@@ -1,7 +1,7 @@
 
 function _2023_01() {
 	var _lines = input_array("2023/2023_01.aoc");
-	test("2023/01: Trebuchet?!", _2023_01p1, _2023_01p2, _lines);
+	test("2023/01: Trebuchet?!", _2023_01p1, _2023_01p2, [_lines]);
 }
 function _2023_01p1(_lines) {
 	var _calibration = 0;

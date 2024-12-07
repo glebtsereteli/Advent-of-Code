@@ -1,7 +1,7 @@
 
 function _2024_03() {
 	var _input = input_string("2024/2024_03.aoc");
-	test("2024/03: Mull It Over", _2024_03p1, _2024_03p2, _input);
+	test("2024/03: Mull It Over", _2024_03p1, _2024_03p2, [_input]);
 }
 function _2024_03p1(_input) {
 	var _pos = 1;

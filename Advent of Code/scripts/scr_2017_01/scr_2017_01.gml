@@ -1,7 +1,7 @@
 
 function _2017_01() {
 	var _sequence = input_string("2017/2017_01.aoc");
-	test("2017/01: Inverse Captcha", _2017_01p1, _2017_01p2, _sequence);
+	test("2017/01: Inverse Captcha", _2017_01p1, _2017_01p2, [_sequence]);
 }
 function _2017_01p1(_sequence) {
 	var _sum = 0;
