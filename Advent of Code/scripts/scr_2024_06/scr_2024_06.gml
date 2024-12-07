@@ -9,25 +9,27 @@ function _2024_06() {
 	var _x = _pos mod _size - 1;
 	var _y = _pos div _size;
 	var _path = ds_list_create();
-	test("2024/06: Guard Gallivant", _2024_06p1, _2024_06p2, [_grid, _size, _x, _y, _path]);
+	var _xdirs = [+0, +1, +0, -1];
+	var _ydirs = [-1, +0, +1, +0];
+	test("2024/06: Guard Gallivant", _2024_06p1, _2024_06p2, [_grid, _size, _x, _y, _path, _xdirs, _ydirs]);
 }
-function _2024_06p1(_grid, _size, _x, _y, _path) {
+function _2024_06p1(_grid, _size, _x, _y, _path, _xdirs, _ydirs) {
 	var _steps = 0;
-	var _dir = 90;
 	var _visited = array_create_ext(_size, method({_size}, function() {
 		return array_create(_size);
 	}));
+	var _dir = 0;
 	while (true) {
 		if (not _visited[_x][_y]) {
 			_visited[_x][_y] = true;
 			_steps++;
 			ds_list_add(_path, _x, _y);
 		}
-		var _xnext = _x + lengthdir_x(1, _dir);
-        var _ynext = _y + lengthdir_y(1, _dir);
+		var _xnext = _x + _xdirs[_dir];
+        var _ynext = _y + _ydirs[_dir];
 		if ((_xnext < 0) or (_xnext == _size) or (_ynext < 0) or (_ynext == _size)) break;
 		if (_grid[_ynext][_xnext] == 35) { // #
-			_dir -= 90;
+			_dir = (_dir + 1) mod 4;
 			continue;
 		}
 		_x = _xnext;
@@ -35,7 +37,7 @@ function _2024_06p1(_grid, _size, _x, _y, _path) {
 	}
 	return _steps;
 }
-function _2024_06p2(_grid, _size, _x, _y, _path) {
+function _2024_06p2(_grid, _size, _x, _y, _path, _xdirs, _ydirs) {
     var _total = 0;
 	var _x1 = _x;
 	var _y1 = _y;
@@ -46,24 +48,22 @@ function _2024_06p2(_grid, _size, _x, _y, _path) {
 		
 		_grid[_py][_px] = 35; // #
 		
-		var _dir = 90;
+		var _dir = 0;
 		_x = _x1;
 		_y = _y1;
 		var _turns = DS_MAP;
 		while (true) {
-			var _xnext = _x + lengthdir_x(1, _dir);
-	        var _ynext = _y + lengthdir_y(1, _dir);
+			var _xnext = _x + _xdirs[_dir];
+	        var _ynext = _y + _ydirs[_dir];
 			if ((_xnext < 0) or (_xnext == _size) or (_ynext < 0) or (_ynext == _size)) break;
 			if (_grid[_ynext][_xnext] == 35) { // #
-				_dir -= 90;
-				var _key = $"{_x},{_y},{(_dir mod 360 + 360) mod 360}";
+				_dir = (_dir + 1) mod 4;
+				var _key = $"{_x},{_y},{_dir}";
 				if (ds_map_exists(_turns, _key)) {
 					_total++;
 					break;
 				}
-				else {
-					_turns[? _key] = true;
-				}
+				_turns[? _key] = true;
 				continue;
 			}
 			_x = _xnext;
