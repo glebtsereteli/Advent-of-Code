@@ -13,11 +13,12 @@ function _2024_06() {
 function _2024_06p1(_grid, _size, _x, _y) {
 	var _steps = 0;
 	var _dir = 90;
-	var _visited = DS_MAP;
+	var _visited = array_create_ext(_size, method({_size}, function() {
+		return array_create(_size);
+	}));
 	while (true) {
-		var _key = $"{_x},{_y}";
-		if (not ds_map_exists(_visited, _key)) {
-			_visited[? _key] = true;
+		if (not _visited[_x][_y]) {
+			_visited[_x][_y] = true;
 			_steps++;
 		}
 		var _xnext = _x + lengthdir_x(1, _dir);
@@ -32,6 +33,7 @@ function _2024_06p1(_grid, _size, _x, _y) {
 	}
 	return _steps;
 }
-function _2024_06p2(_grid, _x, _y) {
-	
+function _2024_06p2(_grid, _size, _x, _y) {
+    
 }
+
