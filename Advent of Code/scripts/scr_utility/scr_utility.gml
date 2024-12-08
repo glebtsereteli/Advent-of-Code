@@ -22,7 +22,7 @@ function input_grid(_filename) {
 	});
 }
 function input_array_real(_filename) {
-	return array_map(input_array(_filename), real);
+	return array_real(input_array(_filename));
 }
 function input_string_to_array(_string) {
 	return array_map(string_split(_string, "\n", true), function(_string) {

@@ -1,7 +1,7 @@
 
 function _2015_02() {
 	var _boxes = array_map(input_array("2015/2015_02.aoc"), function(_box) {
-		return array_map(string_split(_box, "x"), real);
+		return array_real(string_split(_box, "x"));
 	});
 	test("2024/07: I Was Told There Would Be No Math", _2015_02p1, _2015_02p2, [_boxes]);
 }

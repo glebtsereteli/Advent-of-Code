@@ -2,7 +2,7 @@
 function _2024_07() {
 	var _input = input_array("2024/2024_07.aoc");
 	var _equations = array_map(_input, function(_string) {
-		var _parts = array_map(string_split_ext(_string, [": ", " "], true), real);
+		var _parts = array_real(string_split_ext(_string, [": ", " "], true));
 		with ({}) {
 			result = _parts[0];
 			array_delete(_parts, 0, 1);
