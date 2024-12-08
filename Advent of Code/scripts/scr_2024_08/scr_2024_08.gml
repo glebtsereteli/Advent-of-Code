@@ -13,10 +13,10 @@ function _2024_08p1(_grid, _size, _ants) {
 			var _byte = _grid[_j][_i];
 			if (_byte == vk_dot) continue;
 			if (ds_map_exists(_ants, _byte)) {
-				array_push(_ants[? _byte], {_i, _j});
+				array_push(_ants[? _byte], [_i, _j]);
 			}
 			else {
-				_ants[? _byte] = [{_i, _j}];
+				_ants[? _byte] = [[_i, _j]];
 			}
 		}
 	}
@@ -30,11 +30,11 @@ function _2024_08p1(_grid, _size, _ants) {
 			var _aa = _iants[_i];
 			for (var _j = _i + 1; _j < _n; _j++) {
 				var _ab = _iants[_j];
-				var _di = _aa._i - _ab._i;
-				var _dj = _aa._j - _ab._j;
+				var _di = _aa[0] - _ab[0];
+				var _dj = _aa[1] - _ab[1];
 				// a
-				var _ii = _aa._i + _di;
-				var _jj = _aa._j - abs(_dj);
+				var _ii = _aa[0] + _di;
+				var _jj = _aa[1] - abs(_dj);
 				if (_ii > -1) and (_ii < _size) and (_jj > -1) and (_jj < _size) {
 					if (not _lut[_jj][_ii]) {
 						_lut[_jj][_ii] = true;
@@ -42,8 +42,8 @@ function _2024_08p1(_grid, _size, _ants) {
 					}
 				}
 				// b
-				var _ii = _ab._i - _di;
-				var _jj = _ab._j + abs(_dj);
+				var _ii = _ab[0] - _di;
+				var _jj = _ab[1] + abs(_dj);
 				if (_ii > -1) and (_ii < _size) and (_jj > -1) and (_jj < _size) {
 					if (not _lut[_jj][_ii]) {
 						_lut[_jj][_ii] = true;
@@ -66,11 +66,11 @@ function _2024_08p2(_grid, _size, _ants) {
 			var _aa = _iants[_i];
 			for (var _j = _i + 1; _j < _n; _j++) {
 				var _ab = _iants[_j];
-				var _di = _aa._i - _ab._i;
-				var _dj = abs(_aa._j - _ab._j);
+				var _di = _aa[0] - _ab[0];
+				var _dj = abs(_aa[1] - _ab[1]);
 				// a
-				var _ii = _aa._i;
-				var _jj = _aa._j;
+				var _ii = _aa[0];
+				var _jj = _aa[1];
 				do {
 					if (not _lut[_jj][_ii]) {
 						_lut[_jj][_ii] = true;
@@ -80,8 +80,8 @@ function _2024_08p2(_grid, _size, _ants) {
 					_jj -= _dj;
 				} until ((_ii < 0) or (_ii >= _size) or (_jj < 0) or (_jj >= _size));
 				// b
-				var _ii = _aa._i;
-				var _jj = _aa._j;
+				var _ii = _aa[0];
+				var _jj = _aa[1];
 				do {
 					if (not _lut[_jj][_ii]) {
 						_lut[_jj][_ii] = true;
