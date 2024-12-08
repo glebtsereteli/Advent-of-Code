@@ -1,7 +1,4 @@
 
-#macro vk_hashtag 35
-#macro vk_dot 46
-
 function _2024_08() {
 	var _grid = array_map(input_grid("2024/2024_08.aoc"), function(_row) {
 		return array_map(_row, ord);

@@ -7,6 +7,9 @@ global.__t = 0;
 global.__ds_map = ds_map_create();
 #macro DS_MAP global.__ds_map; ds_map_clear(global.__ds_map);
 
+#macro vk_hashtag 35
+#macro vk_dot 46
+
 function input_string(_filename) {
 	var _buffer = buffer_load(_filename);
 	var _string = buffer_read(_buffer, buffer_text);
