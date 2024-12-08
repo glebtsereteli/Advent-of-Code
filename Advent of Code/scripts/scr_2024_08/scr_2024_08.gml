@@ -75,27 +75,25 @@ function _2024_08p2(_grid, _size, _ants) {
 				// a
 				var _ii = _jant._i;
 				var _jj = _jant._j;
-				while (true) {
+				do {
 					if (_lut[_jj][_ii] != vk_hashtag) {
 						_lut[_jj][_ii] = vk_hashtag;
 						_total++;
 					}
 					_ii += _di;
 					_jj -= abs(_dj);
-					if (_ii < 0) or (_ii >= _size) or (_jj < 0) or (_jj >= _size) break;
-				}
+				} until ((_ii < 0) or (_ii >= _size) or (_jj < 0) or (_jj >= _size));
 				// b
 				var _ii = _jant._i;
 				var _jj = _jant._j;
-				while (true) {
+				do {
 					if (_lut[_jj][_ii] != vk_hashtag) {
 						_lut[_jj][_ii] = vk_hashtag;
 						_total++;
 					}
 					_ii -= _di;
 					_jj += abs(_dj);
-					if (_ii < 0) or (_ii >= _size) or (_jj < 0) or (_jj >= _size) break;
-				}
+				} until ((_ii < 0) or (_ii >= _size) or (_jj < 0) or (_jj >= _size));
 			}
 		}
 	}
