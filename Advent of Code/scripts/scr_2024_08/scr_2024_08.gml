@@ -10,13 +10,13 @@ function _2024_08p1(_grid, _size, _ants) {
 	for (var _j = 0; _j < _size; _j++) {
 		var _line = _grid[_j];
 		for (var _i = 0; _i < _size; _i++) {
-			var _char = _grid[_j][_i];
-			if (_char == vk_dot) continue;
-			if (ds_map_exists(_ants, _char)) {
-				array_push(_ants[? _char], {_i, _j});
+			var _byte = _grid[_j][_i];
+			if (_byte == vk_dot) continue;
+			if (ds_map_exists(_ants, _byte)) {
+				array_push(_ants[? _byte], {_i, _j});
 			}
 			else {
-				_ants[? _char] = [{_i, _j}];
+				_ants[? _byte] = [{_i, _j}];
 			}
 		}
 	}
@@ -27,14 +27,14 @@ function _2024_08p1(_grid, _size, _ants) {
 	for (var _key = ds_map_find_first(_ants); _key != undefined; _key = ds_map_find_next(_ants, _key)) {
 		var _iants = _ants[? _key];
 		for (var _i = 0, _n = array_length(_iants); _i < _n; _i++) {
-			var _jant = _iants[_i];
+			var _aa = _iants[_i];
 			for (var _j = _i + 1; _j < _n; _j++) {
-				var _kant = _iants[_j];
-				var _di = _jant._i - _kant._i;
-				var _dj = _jant._j - _kant._j;
+				var _ab = _iants[_j];
+				var _di = _aa._i - _ab._i;
+				var _dj = _aa._j - _ab._j;
 				// a
-				var _ii = _jant._i + _di;
-				var _jj = _jant._j - abs(_dj);
+				var _ii = _aa._i + _di;
+				var _jj = _aa._j - abs(_dj);
 				if (_ii > -1) and (_ii < _size) and (_jj > -1) and (_jj < _size) {
 					if (not _lut[_jj][_ii]) {
 						_lut[_jj][_ii] = true;
@@ -42,8 +42,8 @@ function _2024_08p1(_grid, _size, _ants) {
 					}
 				}
 				// b
-				var _ii = _kant._i - _di;
-				var _jj = _kant._j + abs(_dj);
+				var _ii = _ab._i - _di;
+				var _jj = _ab._j + abs(_dj);
 				if (_ii > -1) and (_ii < _size) and (_jj > -1) and (_jj < _size) {
 					if (not _lut[_jj][_ii]) {
 						_lut[_jj][_ii] = true;
@@ -63,32 +63,32 @@ function _2024_08p2(_grid, _size, _ants) {
 	for (var _key = ds_map_find_first(_ants); _key != undefined; _key = ds_map_find_next(_ants, _key)) {
 		var _iants = _ants[? _key];
 		for (var _i = 0, _n = array_length(_iants); _i < _n; _i++) {
-			var _jant = _iants[_i];
+			var _aa = _iants[_i];
 			for (var _j = _i + 1; _j < _n; _j++) {
-				var _kant = _iants[_j];
-				var _di = _jant._i - _kant._i;
-				var _dj = _jant._j - _kant._j;
+				var _ab = _iants[_j];
+				var _di = _aa._i - _ab._i;
+				var _dj = abs(_aa._j - _ab._j);
 				// a
-				var _ii = _jant._i;
-				var _jj = _jant._j;
+				var _ii = _aa._i;
+				var _jj = _aa._j;
 				do {
 					if (not _lut[_jj][_ii]) {
 						_lut[_jj][_ii] = true;
 						_total++;
 					}
 					_ii += _di;
-					_jj -= abs(_dj);
+					_jj -= _dj;
 				} until ((_ii < 0) or (_ii >= _size) or (_jj < 0) or (_jj >= _size));
 				// b
-				var _ii = _jant._i;
-				var _jj = _jant._j;
+				var _ii = _aa._i;
+				var _jj = _aa._j;
 				do {
 					if (not _lut[_jj][_ii]) {
 						_lut[_jj][_ii] = true;
 						_total++;
 					}
 					_ii -= _di;
-					_jj += abs(_dj);
+					_jj += _dj;
 				} until ((_ii < 0) or (_ii >= _size) or (_jj < 0) or (_jj >= _size));
 			}
 		}
