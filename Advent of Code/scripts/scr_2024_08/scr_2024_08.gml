@@ -3,11 +3,26 @@ function _2024_08() {
 	var _grid = array_map(input_grid("2024/2024_08.aoc"), function(_row) {
 		return array_map(_row, ord);
 	});
-	test("2024/08: Resonant Collinearity", _2024_08p1, _2024_08p2, [_grid, array_length(_grid)]);
+	var _ants = {};
+	test("2024/08: Resonant Collinearity", _2024_08p1, _2024_08p2, [_grid, array_length(_grid), _ants]);
 }
-function _2024_08p1(_grid, _size) {
-	_grid = variable_clone(_grid);
-	var _ants = _2024_08_get_antennas(_grid, _size);
+function _2024_08p1(_grid, _size, _ants) {
+	for (var _j = 0; _j < _size; _j++) {
+		var _line = _grid[_j];
+		for (var _i = 0; _i < _size; _i++) {
+			var _char = _grid[_j][_i];
+			if (_char == vk_dot) continue;
+			if (struct_exists(_ants, _char)) {
+				array_push(_ants[$ _char], {_i, _j});
+			}
+			else {
+				_ants[$ _char] = [{_i, _j}];
+			}
+		}
+	}
+	var _lut = array_create_ext(_size, method({_size}, function() {
+		return array_create(_size);
+	}));
 	var _names = struct_get_names(_ants);
 	var _total = 0;
 	for (var _i = 0, _n = array_length(_names); _i < _n; _i++) {
@@ -23,8 +38,8 @@ function _2024_08p1(_grid, _size) {
 				var _ii = _jant._i + _di;
 				var _jj = _jant._j - abs(_dj);
 				if (_ii > -1) and (_ii < _size) and (_jj > -1) and (_jj < _size) {
-					if (_grid[_jj][_ii] != vk_hashtag) {
-						_grid[_jj][_ii] = vk_hashtag;
+					if (_lut[_jj][_ii] != vk_hashtag) {
+						_lut[_jj][_ii] = vk_hashtag;
 						_total++;
 					}
 				}
@@ -32,8 +47,8 @@ function _2024_08p1(_grid, _size) {
 				var _ii = _kant._i - _di;
 				var _jj = _kant._j + abs(_dj);
 				if (_ii > -1) and (_ii < _size) and (_jj > -1) and (_jj < _size) {
-					if (_grid[_jj][_ii] != vk_hashtag) {
-						_grid[_jj][_ii] = vk_hashtag;
+					if (_lut[_jj][_ii] != vk_hashtag) {
+						_lut[_jj][_ii] = vk_hashtag;
 						_total++;
 					}
 				}
@@ -42,11 +57,10 @@ function _2024_08p1(_grid, _size) {
 	}
 	return _total;
 }
-function _2024_08p2(_grid, _size) {
+function _2024_08p2(_grid, _size, _ants) {
 	var _lut = array_create_ext(_size, method({_size}, function() {
 		return array_create(_size);
 	}));
-	var _ants = _2024_08_get_antennas(_grid, _size);
 	var _names = struct_get_names(_ants);
 	var _total = 0;
 	for (var _i = 0, _n = array_length(_names); _i < _n; _i++) {
@@ -86,21 +100,4 @@ function _2024_08p2(_grid, _size) {
 		}
 	}
 	return _total;
-}
-function _2024_08_get_antennas(_grid) {
-	var _ants = {};
-	for (var _j = 0, _size = array_length(_grid); _j < _size; _j++) {
-		var _line = _grid[_j];
-		for (var _i = 0; _i < _size; _i++) {
-			var _char = _grid[_j][_i];
-			if (_char == vk_dot) continue;
-			if (struct_exists(_ants, _char)) {
-				array_push(_ants[$ _char], {_i, _j});
-			}
-			else {
-				_ants[$ _char] = [{_i, _j}];
-			}
-		}
-	}
-	return _ants;
 }
