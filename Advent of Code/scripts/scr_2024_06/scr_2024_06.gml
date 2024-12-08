@@ -28,7 +28,7 @@ function _2024_06p1(_grid, _size, _x, _y, _path, _xdirs, _ydirs) {
 		var _xnext = _x + _xdirs[_dir];
         var _ynext = _y + _ydirs[_dir];
 		if ((_xnext < 0) or (_xnext == _size) or (_ynext < 0) or (_ynext == _size)) break;
-		if (_grid[_ynext][_xnext] == 35) { // #
+		if (_grid[_ynext][_xnext] == vk_hashtag) {
 			_dir = (_dir + 1) mod 4;
 			continue;
 		}
@@ -46,7 +46,7 @@ function _2024_06p2(_grid, _size, _x, _y, _path, _xdirs, _ydirs) {
 		var _py = _path[|_i + 1];
 		if (_px == _x1) and (_py == _y1) continue;
 		
-		_grid[_py][_px] = 35; // #
+		_grid[_py][_px] = vk_hashtag;
 		
 		var _dir = 0;
 		_x = _x1;
@@ -56,7 +56,7 @@ function _2024_06p2(_grid, _size, _x, _y, _path, _xdirs, _ydirs) {
 			var _xnext = _x + _xdirs[_dir];
 	        var _ynext = _y + _ydirs[_dir];
 			if ((_xnext < 0) or (_xnext == _size) or (_ynext < 0) or (_ynext == _size)) break;
-			if (_grid[_ynext][_xnext] == 35) { // #
+			if (_grid[_ynext][_xnext] == vk_hashtag) {
 				_dir = (_dir + 1) mod 4;
 				var _key = $"{_x},{_y},{_dir}";
 				if (ds_map_exists(_turns, _key)) {
@@ -69,7 +69,7 @@ function _2024_06p2(_grid, _size, _x, _y, _path, _xdirs, _ydirs) {
 			_x = _xnext;
 			_y = _ynext;
 		}
-		_grid[_py][_px] = 46; // .
+		_grid[_py][_px] = vk_dot;
 	}
 	return _total;
 }

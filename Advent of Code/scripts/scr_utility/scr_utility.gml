@@ -16,6 +16,11 @@ function input_string(_filename) {
 function input_array(_filename) {
 	return input_string_to_array(input_string(_filename));
 }
+function input_grid(_filename) {
+	return array_map(input_array(_filename), function(_row) {
+		return string_explode(_row);
+	});
+}
 function input_array_real(_filename) {
 	return array_map(input_array(_filename), real);
 }
@@ -29,7 +34,7 @@ function input_linesep(_filename) {
 	_input = string_replace_all(_input, "\r\n", "\n");
 	return string_split(_input, "\n\n");
 }
-function print(_value, _loud = false) {
+function log(_value, _loud = false) {
 	show_debug_message(_value);
 	if (_loud) {
 		show_message(_value);
