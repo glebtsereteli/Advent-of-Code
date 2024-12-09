@@ -24,6 +24,11 @@ function input_grid(_filename) {
 		return string_explode(_row);
 	});
 }
+function input_grid_ord(_filename) {
+	return array_map(input_array(_filename), function(_row) {
+		return array_map(string_explode(_row), ord);
+	});
+}
 function input_array_real(_filename) {
 	return array_real(input_array(_filename));
 }
