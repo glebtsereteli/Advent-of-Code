@@ -1,8 +1,10 @@
+// 6385338159127
+// 6415163624282
 
 function _2024_09() {
 	var _disk = array_real(string_explode(input_string("2024/2024_09.aoc")));
 	var _map = ds_list_create();
-	test("2024/09: Disk Fragmenter", noop, _2024_09p2, [_disk, _map]);
+	test("2024/09: Disk Fragmenter", _2024_09p1, _2024_09p2, [_disk, _map]);
 	ds_list_destroy(_map);
 }
 function _2024_09p1(_disk, _map) {
@@ -48,17 +50,17 @@ function _2024_09p2(_disk) {
 	var _map = [];
 	var _id = 0;
 	var _on_file = true;
-	var _n = -1;
-	var _sizes = [];
-	var _locs = [];
+	var _n = 0;
+	var _sizes = ds_list_create();
+	var _locs = ds_list_create();
 	var _i = 0; repeat (array_length(_disk)) {
 		var _num = _disk[_i];
 		if (_on_file) {
 			repeat (_num) {
 				array_push(_map, _id);
 			}
-			array_push(_sizes, _num);
-			array_push(_locs, _n + 1);
+			ds_list_add(_sizes, _num);
+			ds_list_add(_locs, _n);
 			_id++;
 			_on_file = false;
 		}
@@ -71,16 +73,10 @@ function _2024_09p2(_disk) {
 		_n += _num;
 		_i++;
 	}
-	// 00...111...2...333.44.5555.6666.777.888899
-	// 00992111777.44.333....5555.6666.....8888..
 	
-	array_reverse_ext(_locs);
-	array_reverse_ext(_sizes);
-	
-	for (var _i = 0; _i < array_length(_sizes); _i++) {
-		var _size = _sizes[_i];
-		var _loc = _locs[_i];
-		
+	for (var _i = ds_list_size(_sizes) - 1; _i > -1; _i--) {
+		var _size = _sizes[|_i];
+		var _loc = _locs[|_i];
 		var _si0 = 0;
 		var _found = false;
 		while (true) {
@@ -89,27 +85,20 @@ function _2024_09p2(_disk) {
 			
 			var _si = _si1;
 			while (true) {
-				if (_si == array_length(_map)) break;
+				if (_si == _n) break;
 				if (_map[_si] != undefined) break;
 				_si++;
 			}
 			
 			_si0 = _si;
-			var _sn = _si - _si1;
-			if (_sn >= _size) and (_loc >= _si) {
-				_found = true;
-				break;
-			}
-		}
-		if (_found) {
+			if (_loc < _si) or ((_si - _si1) < _size) continue;
 			for (var _j = 0; _j < _size; _j++) {
 				_map[_si1 + _j] = _map[_loc + _j];
 				_map[_loc + _j] = undefined;
 			}
+			break;
 		}
-		_si0 = _si1 + _sn;
 	}
-	//log(_map);
 		
 	var _checksum = 0;
 	for (var _i = 0; _i < _n; _i++) {
@@ -117,6 +106,9 @@ function _2024_09p2(_disk) {
 		if (_num == undefined) continue;
 		_checksum += (_i * _num);
 	}
+	
+	ds_list_destroy(_sizes);
+	ds_list_destroy(_locs);
+	
 	return _checksum;
 }
-// 6415163624282

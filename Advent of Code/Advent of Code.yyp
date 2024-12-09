@@ -97,7 +97,6 @@
     {"id":{"name":"scr_2024_09","path":"scripts/scr_2024_09/scr_2024_09.yy",},},
     {"id":{"name":"scr_aoc","path":"scripts/scr_aoc/scr_aoc.yy",},},
     {"id":{"name":"scr_utility","path":"scripts/scr_utility/scr_utility.yy",},},
-    {"id":{"name":"Script25","path":"scripts/Script25/Script25.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
