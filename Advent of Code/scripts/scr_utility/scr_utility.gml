@@ -42,6 +42,7 @@ function input_linesep(_filename) {
 	_input = string_replace_all(_input, "\r\n", "\n");
 	return string_split(_input, "\n\n");
 }
+
 function log(_value, _loud = false) {
 	show_debug_message(_value);
 	if (_loud) {

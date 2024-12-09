@@ -1,6 +1,6 @@
 
 function _2024_08() {
-	var _grid = array_map(input_grid("2024/2024_08.aoc"), function(_row) {
+	var _grid = array_map(input_grid("2024/2024_08_DemoA.aoc"), function(_row) {
 		return array_map(_row, ord);
 	});
 	var _size = array_length(_grid);
