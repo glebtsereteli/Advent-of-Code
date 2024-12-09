@@ -20,10 +20,7 @@ function _2024_08p1(_grid, _size, _ants) {
 			}
 		}
 	}
-	var _lut = array_create_ext(_size, method({_size}, function() {
-		return array_create(_size);
-	}));
-	var _total = 0;
+	var _lut = ds_grid_create(_size, _size);
 	for (var _key = ds_map_find_first(_ants); _key != undefined; _key = ds_map_find_next(_ants, _key)) {
 		var _iants = _ants[? _key];
 		for (var _i = 0, _n = array_length(_iants); _i < _n; _i++) {
@@ -36,30 +33,23 @@ function _2024_08p1(_grid, _size, _ants) {
 				var _ii = _aa[0] + _di;
 				var _jj = _aa[1] - abs(_dj);
 				if (_ii > -1) and (_ii < _size) and (_jj > -1) and (_jj < _size) {
-					if (not _lut[_jj][_ii]) {
-						_lut[_jj][_ii] = true;
-						_total++;
-					}
+					_lut[# _jj, _ii] = true;
 				}
 				// b
 				var _ii = _ab[0] - _di;
 				var _jj = _ab[1] + abs(_dj);
 				if (_ii > -1) and (_ii < _size) and (_jj > -1) and (_jj < _size) {
-					if (not _lut[_jj][_ii]) {
-						_lut[_jj][_ii] = true;
-						_total++;
-					}
+					_lut[# _jj, _ii] = true;
 				}
 			}
 		}
 	}
+	var _total = ds_grid_get_sum(_lut, 0, 0, _size, _size);
+	ds_grid_destroy(_lut);
 	return _total;
 }
 function _2024_08p2(_grid, _size, _ants) {
-	var _lut = array_create_ext(_size, method({_size}, function() {
-		return array_create(_size);
-	}));
-	var _total = 0;
+	var _lut = ds_grid_create(_size, _size);
 	for (var _key = ds_map_find_first(_ants); _key != undefined; _key = ds_map_find_next(_ants, _key)) {
 		var _iants = _ants[? _key];
 		for (var _i = 0, _n = array_length(_iants); _i < _n; _i++) {
@@ -72,10 +62,7 @@ function _2024_08p2(_grid, _size, _ants) {
 				var _ii = _aa[0];
 				var _jj = _aa[1];
 				do {
-					if (not _lut[_jj][_ii]) {
-						_lut[_jj][_ii] = true;
-						_total++;
-					}
+					_lut[# _jj, _ii] = true;
 					_ii += _di;
 					_jj -= _dj;
 				} until ((_ii < 0) or (_ii >= _size) or (_jj < 0) or (_jj >= _size));
@@ -83,15 +70,14 @@ function _2024_08p2(_grid, _size, _ants) {
 				var _ii = _aa[0];
 				var _jj = _aa[1];
 				do {
-					if (not _lut[_jj][_ii]) {
-						_lut[_jj][_ii] = true;
-						_total++;
-					}
+					_lut[# _jj, _ii] = true;
 					_ii -= _di;
 					_jj += _dj;
 				} until ((_ii < 0) or (_ii >= _size) or (_jj < 0) or (_jj >= _size));
 			}
 		}
 	}
+	var _total = ds_grid_get_sum(_lut, 0, 0, _size, _size);
+	ds_grid_destroy(_lut);
 	return _total;
 }
