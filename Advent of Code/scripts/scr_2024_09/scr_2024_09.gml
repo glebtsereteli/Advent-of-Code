@@ -46,8 +46,8 @@ function _2024_09p1(_disk, _map) {
 	}
 	return _checksum;
 }
-function _2024_09p2(_disk) {
-	var _map = [];
+function _2024_09p2(_disk, _map) {
+	ds_list_clear(_map);
 	var _id = 0;
 	var _on_file = true;
 	var _n = 0;
@@ -57,7 +57,7 @@ function _2024_09p2(_disk) {
 		var _num = _disk[_i];
 		if (_on_file) {
 			repeat (_num) {
-				array_push(_map, _id);
+				ds_list_add(_map, _id);
 			}
 			ds_list_add(_sizes, _num);
 			ds_list_add(_locs, _n);
@@ -66,7 +66,7 @@ function _2024_09p2(_disk) {
 		}
 		else {
 			repeat (_num) {
-				array_push(_map, undefined);
+				ds_list_add(_map, undefined);
 			}
 			_on_file = true;
 		}
@@ -80,21 +80,22 @@ function _2024_09p2(_disk) {
 		var _si0 = 0;
 		var _found = false;
 		while (true) {
-			var _si1 = array_get_index(_map, undefined, _si0);
-			if (_si1 == -1) break;
+			var _si1 = _si0; repeat (_n - _si0) {
+				if (_map[|_si1] == undefined) break;
+				_si1++;
+			}
+			if (_si1 == _si0) break;
 			
-			var _si = _si1;
-			while (true) {
-				if (_si == _n) break;
-				if (_map[_si] != undefined) break;
-				_si++;
+			var _si2 = _si1; repeat (_n - _si1) {
+				if (_map[|_si2] != undefined) break;
+				_si2++;
 			}
 			
-			_si0 = _si;
-			if (_loc < _si) or ((_si - _si1) < _size) continue;
+			_si0 = _si2;
+			if (_loc < _si2) or ((_si2 - _si1) < _size) continue;
 			for (var _j = 0; _j < _size; _j++) {
-				_map[_si1 + _j] = _map[_loc + _j];
-				_map[_loc + _j] = undefined;
+				_map[|_si1 + _j] = _map[|_loc + _j];
+				_map[|_loc + _j] = undefined;
 			}
 			break;
 		}
@@ -102,7 +103,7 @@ function _2024_09p2(_disk) {
 		
 	var _checksum = 0;
 	for (var _i = 0; _i < _n; _i++) {
-		var _num = _map[_i];
+		var _num = _map[|_i];
 		if (_num == undefined) continue;
 		_checksum += (_i * _num);
 	}
