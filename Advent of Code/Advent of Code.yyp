@@ -106,7 +106,6 @@
     {"id":{"name":"scr_2024_10","path":"scripts/scr_2024_10/scr_2024_10.yy",},},
     {"id":{"name":"scr_aoc","path":"scripts/scr_aoc/scr_aoc.yy",},},
     {"id":{"name":"scr_utility","path":"scripts/scr_utility/scr_utility.yy",},},
-    {"id":{"name":"Script26","path":"scripts/Script26/Script26.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",

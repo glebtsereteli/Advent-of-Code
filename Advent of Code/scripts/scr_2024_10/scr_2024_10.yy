@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_2024_10",
   "parent":{
-    "name":"Advent of Code",
-    "path":"Advent of Code.yyp",
+    "name":"2024",
+    "path":"folders/Solutions/2024.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

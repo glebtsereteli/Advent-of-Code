@@ -34,8 +34,7 @@ function _2024_10p1(_grid, _size, _idirs, _jdirs, _visited, _queue) {
 					var _iii = _ii + _idirs[_k];
 					var _jjj = _jj + _jdirs[_k];
 					if ((_iii < 0) or (_jjj < 0) or (_iii >= _size) or (_jjj >= _size)) continue;
-					var _nnn = _grid[_jjj][_iii];
-					if (_nnn != _nn + 1) continue;
+					if (_grid[_jjj][_iii] != _nn + 1) continue;
 					ds_queue_enqueue(_queue, (_iii << 7) | _jjj);
 				}
 			}
@@ -65,8 +64,7 @@ function _2024_10p2(_grid, _size, _idirs, _jdirs, _visited, _queue) {
 					var _iii = _ii + _idirs[_k];
 					var _jjj = _jj + _jdirs[_k];
 					if ((_iii < 0) or (_jjj < 0) or (_iii >= _size) or (_jjj >= _size)) continue;
-					var _nnn = _grid[_jjj][_iii];
-					if (_nnn != _nn + 1) continue;
+					if (_grid[_jjj][_iii] != _nn + 1) continue;
 					ds_queue_enqueue(_queue, (_iii << 7) | _jjj);
 				}
 			}
