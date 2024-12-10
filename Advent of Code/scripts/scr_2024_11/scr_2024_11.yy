@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_2024_08b",
+  "%Name":"scr_2024_11",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_2024_08b",
+  "name":"scr_2024_11",
   "parent":{
     "name":"2024",
     "path":"folders/Solutions/2024.yy",

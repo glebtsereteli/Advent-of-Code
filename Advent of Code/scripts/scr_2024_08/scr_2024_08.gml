@@ -39,7 +39,7 @@ function _2024_08p1(_grid, _size, _ants, _lut) {
 				if ((_ii > -1) and (_ii < _size) and (_jj > -1) and (_jj < _size)) {
 					_lut[# _jj, _ii] = true;
 				}
-				// b
+				// b. Can be skipped with full self-iteration, but that's slower.
 				var _ii = _ai - _di;
 				var _jj = _aj + abs(_dj);
 				if (_ii > -1) and (_ii < _size) and (_jj > -1) and (_jj < _size) {

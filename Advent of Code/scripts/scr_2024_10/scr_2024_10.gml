@@ -10,19 +10,19 @@ function _2024_10() {
 }
 function _2024_10p1(_grid, _size, _idirs, _jdirs, _queue) {
 	var _total = 0;
-	var _visited = ds_grid_create(_size, _size);
+	var _visited = ds_list_create();
 	for (var _j = 0; _j < _size; _j++) {
 		for (var _i = 0; _i < _size; _i++) {
 			var _n = _grid[_j][_i];
 			if (_n != vk_zero) continue;
-			ds_grid_clear(_visited, false);
+			ds_list_clear(_visited);
 			ds_queue_enqueue(_queue, (_i << 7) | _j);
 			while (not ds_queue_empty(_queue)) {
 				var _packed = ds_queue_dequeue(_queue);
+				if (ds_list_find_index(_visited, _packed) != -1) continue;
+				ds_list_add(_visited, _packed);
 				var _ii = (_packed >> 7);
 				var _jj = _packed & 0x7F;
-				if (_visited[# _ii, _jj]) continue;
-				_visited[# _ii, _jj] = true;
 				var _nn = _grid[_jj][_ii];
 				if (_nn == vk_nine) {
 					_total++;
@@ -38,7 +38,7 @@ function _2024_10p1(_grid, _size, _idirs, _jdirs, _queue) {
 			}
 		}
 	}
-	ds_grid_destroy(_visited);
+	ds_list_destroy(_visited);
 	return _total;
 }
 function _2024_10p2(_grid, _size, _idirs, _jdirs, _queue) {
