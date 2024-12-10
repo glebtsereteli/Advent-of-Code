@@ -17,7 +17,6 @@ function _2024_10p1(_grid, _size, _idirs, _jdirs, _visited, _queue) {
 			var _n = _grid[_j][_i];
 			if (_n != vk_zero) continue;
 			ds_grid_clear(_visited, false);
-			ds_queue_clear(_queue);
 			ds_queue_enqueue(_queue, (_i << 7) | _j);
 			while (not ds_queue_empty(_queue)) {
 				var _packed = ds_queue_dequeue(_queue);
@@ -48,8 +47,6 @@ function _2024_10p2(_grid, _size, _idirs, _jdirs, _visited, _queue) {
 		for (var _i = 0; _i < _size; _i++) {
 			var _n = _grid[_j][_i];
 			if (_n != vk_zero) continue;
-			ds_grid_clear(_visited, false);
-			ds_queue_clear(_queue);
 			ds_queue_enqueue(_queue, (_i << 7) | _j);
 			while (not ds_queue_empty(_queue)) {
 				var _packed = ds_queue_dequeue(_queue);
