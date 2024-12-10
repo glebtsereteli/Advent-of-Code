@@ -36,7 +36,7 @@ function _2024_10p1(_grid, _size, _idirs, _jdirs, _visited, _queue) {
 					if ((_iii < 0) or (_jjj < 0) or (_iii >= _size) or (_jjj >= _size)) continue;
 					var _nnn = _grid[_jjj][_iii];
 					if (_nnn != _nn + 1) continue;
-					ds_queue_enqueue(_queue, (_i << 7) | _j);
+					ds_queue_enqueue(_queue, (_iii << 7) | _jjj);
 				}
 			}
 		}
