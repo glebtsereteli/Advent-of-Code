@@ -4,14 +4,13 @@ function _2024_10() {
 	var _size = array_length(_grid);
 	var _idirs = [+1, +0, -1, +0];
 	var _jdirs = [+0, -1, +0, +1];
-	var _visited = ds_grid_create(_size, _size);
 	var _queue = ds_queue_create();
-	test("2024/10: Hoof It", _2024_10p1, _2024_10p2, [_grid, _size, _idirs, _jdirs, _visited, _queue]);
-	ds_grid_destroy(_visited);
+	test("2024/10: Hoof It", _2024_10p1, _2024_10p2, [_grid, _size, _idirs, _jdirs, _queue]);
 	ds_queue_destroy(_queue);
 }
-function _2024_10p1(_grid, _size, _idirs, _jdirs, _visited, _queue) {
+function _2024_10p1(_grid, _size, _idirs, _jdirs, _queue) {
 	var _total = 0;
+	var _visited = ds_grid_create(_size, _size);
 	for (var _j = 0; _j < _size; _j++) {
 		for (var _i = 0; _i < _size; _i++) {
 			var _n = _grid[_j][_i];
@@ -39,9 +38,10 @@ function _2024_10p1(_grid, _size, _idirs, _jdirs, _visited, _queue) {
 			}
 		}
 	}
+	ds_grid_destroy(_visited);
 	return _total;
 }
-function _2024_10p2(_grid, _size, _idirs, _jdirs, _visited, _queue) {
+function _2024_10p2(_grid, _size, _idirs, _jdirs, _queue) {
 	var _total = 0;
 	for (var _j = 0; _j < _size; _j++) {
 		for (var _i = 0; _i < _size; _i++) {
