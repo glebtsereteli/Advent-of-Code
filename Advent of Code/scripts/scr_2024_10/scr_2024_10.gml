@@ -18,11 +18,12 @@ function _2024_10p1(_grid, _size, _idirs, _jdirs, _visited, _queue) {
 			if (_n != vk_zero) continue;
 			ds_grid_clear(_visited, false);
 			ds_queue_clear(_queue);
-			ds_queue_enqueue(_queue, _i, _j, _n);
+			ds_queue_enqueue(_queue, (_i << 16) | (_j << 8) | _n);
 			while (not ds_queue_empty(_queue)) {
-				var _ii = ds_queue_dequeue(_queue);
-				var _jj = ds_queue_dequeue(_queue);
-				var _nn = ds_queue_dequeue(_queue);
+				var _packed = ds_queue_dequeue(_queue);
+				var _ii = (_packed >> 16) & 0x7F;
+				var _jj = (_packed >> 8) & 0x7F;
+				var _nn = _packed & 0xFF; 
 				if (_visited[# _ii, _jj]) continue;
 				_visited[# _ii, _jj] = true;
 				if (_nn == vk_nine) {
@@ -35,7 +36,7 @@ function _2024_10p1(_grid, _size, _idirs, _jdirs, _visited, _queue) {
 					if ((_iii < 0) or (_jjj < 0) or (_iii >= _size) or (_jjj >= _size)) continue;
 					var _nnn = _grid[_jjj][_iii];
 					if (_nnn != _nn + 1) continue;
-					ds_queue_enqueue(_queue, _iii, _jjj, _nnn);
+					ds_queue_enqueue(_queue, (_iii << 16) | (_jjj << 8) | _nnn);
 				}
 			}
 		}
@@ -50,11 +51,12 @@ function _2024_10p2(_grid, _size, _idirs, _jdirs, _visited, _queue) {
 			if (_n != vk_zero) continue;
 			ds_grid_clear(_visited, false);
 			ds_queue_clear(_queue);
-			ds_queue_enqueue(_queue, _i, _j, _n);
+			ds_queue_enqueue(_queue, (_i << 16) | (_j << 8) | _n);
 			while (not ds_queue_empty(_queue)) {
-				var _ii = ds_queue_dequeue(_queue);
-				var _jj = ds_queue_dequeue(_queue);
-				var _nn = ds_queue_dequeue(_queue);
+				var _packed = ds_queue_dequeue(_queue);
+				var _ii = (_packed >> 16) & 0x7F;
+				var _jj = (_packed >> 8) & 0x7F;
+				var _nn = _packed & 0xFF;
 				if (_nn == vk_nine) {
 					_total++;
 					continue;
@@ -65,7 +67,7 @@ function _2024_10p2(_grid, _size, _idirs, _jdirs, _visited, _queue) {
 					if ((_iii < 0) or (_jjj < 0) or (_iii >= _size) or (_jjj >= _size)) continue;
 					var _nnn = _grid[_jjj][_iii];
 					if (_nnn != _nn + 1) continue;
-					ds_queue_enqueue(_queue, _iii, _jjj, _nnn);
+					ds_queue_enqueue(_queue, (_iii << 16) | (_jjj << 8) | _nnn);
 				}
 			}
 		}
