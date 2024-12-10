@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"Script25",
+  "%Name":"Script26",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Script25",
+  "name":"Script26",
   "parent":{
     "name":"Advent of Code",
     "path":"Advent of Code.yyp",

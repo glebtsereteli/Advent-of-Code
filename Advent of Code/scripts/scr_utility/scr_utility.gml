@@ -9,6 +9,8 @@ global.__ds_map = ds_map_create();
 
 #macro vk_hashtag 35
 #macro vk_dot 46
+#macro vk_zero 48
+#macro vk_nine 57
 
 function input_string(_filename) {
 	var _buffer = buffer_load(_filename);
