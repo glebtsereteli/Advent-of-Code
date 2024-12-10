@@ -11,7 +11,7 @@ function _2024_09p1(_disk, _map) {
 	var _id = 0;
 	var _nempty = 0;
 	var _on_file = true;
-	var _n = -1;
+	var _n = 0;
 	var _i = 0; repeat (array_length(_disk)) {
 		var _num = _disk[_i];
 		if (_on_file) {
@@ -32,15 +32,23 @@ function _2024_09p1(_disk, _map) {
 		_i++;
 	}
 	
-	var _jj = _n; repeat (_nempty) {
-		var _index = ds_list_find_index(_map, undefined);
-		_map[|_index] = _map[|_jj];
-		_map[|_jj] = undefined;
-		_jj--;
+	var _i = 0;
+	var _j = _n - 1;
+	repeat (_n) {
+		if (_map[|_i] == undefined) {
+			if (_map[|_j] != undefined) {
+				_map[|_i] = _map[|_j];
+				_map[|_j] = undefined;
+				_i++;
+			}
+			_j--;
+		}
+		else _i++;
+		if (_i > _j) break;
 	}
 	
 	var _checksum = 0;
-	var _i = 0; repeat (_jj + 1) {
+	var _i = 0; repeat (_j + 1) {
 		_checksum += (_i * _map[|_i]);
 		_i++;
 	}
@@ -110,6 +118,5 @@ function _2024_09p2(_disk, _map) {
 	
 	ds_list_destroy(_sizes);
 	ds_list_destroy(_locs);
-	
 	return _checksum;
 }
