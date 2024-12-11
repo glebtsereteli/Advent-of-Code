@@ -19,10 +19,11 @@ function _2024_11_process(_stones, _blinks) {
 	return _total;
 }
 function _2024_11_count_stones(_stone, _blinks) {
-	static _lut = {};
+	static _lut = array_create_ext(75, function() { return {}; });
+	static _powersof2 = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000];
+	
     if (_blinks-- == 0) return 1;
-	var _key = (_stone << 8) | _blinks;
-    if (struct_exists(_lut, _key)) return _lut[$ _key];
+    if (struct_exists(_lut[_blinks], _stone)) return _lut[_blinks][$ _stone];
     var _result;
     if (_stone == 0) {
         _result = _2024_11_count_stones(1, _blinks);
@@ -30,7 +31,6 @@ function _2024_11_count_stones(_stone, _blinks) {
 	else {
         var _length = floor(log10(_stone)) + 1;
         if ((_length mod 2) == 0) {
-			static _powersof2 = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000];
             var _divisor = _powersof2[_length div 2];
             var _l = floor(_stone / _divisor);
             var _r = _stone mod _divisor;
@@ -40,6 +40,6 @@ function _2024_11_count_stones(_stone, _blinks) {
             _result = _2024_11_count_stones(_stone * 2024, _blinks);
         }
     }
-    _lut[$ _key] = _result;
+    _lut[_blinks][$ _stone] = _result;
     return _result;
 }
