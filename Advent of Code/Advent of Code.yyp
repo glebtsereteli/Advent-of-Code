@@ -72,6 +72,8 @@
     {"$GMIncludedFile":"","%Name":"2024_10_DemoF.aoc","CopyToMask":-1,"filePath":"datafiles/2024","name":"2024_10_DemoF.aoc","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"2024_10_DemoG.aoc","CopyToMask":-1,"filePath":"datafiles/2024","name":"2024_10_DemoG.aoc","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"2024_10.aoc","CopyToMask":-1,"filePath":"datafiles/2024","name":"2024_10.aoc","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"2024_11_Demo.aoc","CopyToMask":-1,"filePath":"datafiles/2024","name":"2024_11_Demo.aoc","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"2024_11.aoc","CopyToMask":-1,"filePath":"datafiles/2024","name":"2024_11.aoc","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
   ],
   "isEcma":false,
   "LibraryEmitters":[],
