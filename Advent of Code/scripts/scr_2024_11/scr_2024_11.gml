@@ -1,4 +1,3 @@
-// 125681
 
 function _2024_11() {
 	var _stones = array_real(string_split(input_string("2024/2024_11.aoc"), " "));
@@ -23,7 +22,8 @@ function _2024_11_count_stones(_stone, _blinks) {
 	static _powersof2 = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000];
 	
     if (_blinks-- == 0) return 1;
-    if (struct_exists(_lut[_blinks], _stone)) return _lut[_blinks][$ _stone];
+	var _blut = _lut[_blinks];
+    if (struct_exists(_blut, _stone)) return _blut[$ _stone];
     var _result;
     if (_stone == 0) {
         _result = _2024_11_count_stones(1, _blinks);
@@ -40,6 +40,6 @@ function _2024_11_count_stones(_stone, _blinks) {
             _result = _2024_11_count_stones(_stone * 2024, _blinks);
         }
     }
-    _lut[_blinks][$ _stone] = _result;
+    _blut[$ _stone] = _result;
     return _result;
 }
