@@ -18,15 +18,15 @@ function _2024_11_process(_stones, _blinks) {
 	return _total;
 }
 function _2024_11_count_stones(_stone, _blinks) {
-	static _lut = array_create_ext(75, function() { return {}; });
+	static _lut = array_create_ext(76, function() { return {}; });
 	static _powersof2 = [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000];
 	
-    if (_blinks-- == 0) return 1;
+    if (_blinks == 0) return 1;
 	var _blut = _lut[_blinks];
     if (struct_exists(_blut, _stone)) return _blut[$ _stone];
     var _result;
     if (_stone == 0) {
-        _result = _2024_11_count_stones(1, _blinks);
+        _result = _2024_11_count_stones(1, _blinks - 1);
     }
 	else {
         var _length = floor(log10(_stone)) + 1;
@@ -34,10 +34,10 @@ function _2024_11_count_stones(_stone, _blinks) {
             var _divisor = _powersof2[_length div 2];
             var _l = floor(_stone / _divisor);
             var _r = _stone mod _divisor;
-            _result = _2024_11_count_stones(_l, _blinks) + _2024_11_count_stones(_r, _blinks);
+            _result = _2024_11_count_stones(_l, _blinks - 1) + _2024_11_count_stones(_r, _blinks - 1);
         }
 		else {
-            _result = _2024_11_count_stones(_stone * 2024, _blinks);
+            _result = _2024_11_count_stones(_stone * 2024, _blinks - 1);
         }
     }
     _blut[$ _stone] = _result;
