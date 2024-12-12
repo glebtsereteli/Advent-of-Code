@@ -69,14 +69,16 @@ function _2024_12p2() {
 			var _jj = _icell & 255;
 			var _l = _check(_region, _ii - 1, _jj), _r = _check(_region, _ii + 1, _jj);
 			var _t = _check(_region, _ii, _jj - 1), _b = _check(_region, _ii, _jj + 1);
-			_corners += ((not _r) and (not _t));
-			_corners += ((not _r) and (not _b));
-			_corners += ((not _l) and (not _t));
-			_corners += ((not _l) and (not _b));
-			_corners += ((_l and _t) and (not _check(_region, _ii - 1, _jj - 1)));
-			_corners += ((_r and _t) and (not _check(_region, _ii + 1, _jj - 1)));
-			_corners += ((_l and _b) and (not _check(_region, _ii - 1, _jj + 1)));
-			_corners += ((_r and _b) and (not _check(_region, _ii + 1, _jj + 1)));
+			var _nottb = (not _t + not _b);
+			_corners += (not _l and _nottb) + (not _r and _nottb);
+			if (_t) {
+				_corners += (_l and not _check(_region, _ii - 1, _jj - 1));
+				_corners += (_r and not _check(_region, _ii + 1, _jj - 1));
+			}
+			if (_b) {
+				_corners += (_l and not _check(_region, _ii - 1, _jj + 1));
+				_corners += (_r and not _check(_region, _ii + 1, _jj + 1));
+			}
 			_j++;
 		}
 		_total += (_nregion * _corners);
