@@ -73,6 +73,11 @@ function sum() {
 	}
 	return _sum;
 }
+function array_create_2d(_w, _h, _value = 0) {
+	return array_create_ext(_w, method({_h, _value}, function() {
+		return array_create(_h, _value);
+	}));
+}
 function array_sum(_array) {
 	return array_reduce(_array, function(_a, _b) {
 		return (_a + _b);
