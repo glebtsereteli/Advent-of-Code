@@ -29,5 +29,25 @@ function _2018_02p1(_ids) {
 	return (_two * _three);
 }
 function _2018_02p2(_ids) {
-	
+	var _l = string_length(_ids[0]);
+	for (var _i = 0, _n = array_length(_ids); _i < _n; _i++) {
+		var _a = _ids[_i];
+		for (var _j = _i + 1; _j < _n; _j++) {
+			var _b = _ids[_j];
+			var _diff = undefined;
+			for (var _k = 1; _k <= _l; _k++) {
+				if (string_byte_at(_a, _k) == string_byte_at(_b, _k)) continue;
+				if (_diff == undefined) {
+					_diff = _k;	
+				}
+				else {
+					_diff = undefined;
+					break;
+				}
+			}
+			if (_diff == undefined) continue;
+			return string_delete(_a, _diff, 1);
+		}
+	}
+	return undefined;
 }
