@@ -73,6 +73,9 @@ function sum() {
 	}
 	return _sum;
 }
+function mod2(_value, _mod) {
+    return (_value - (floor(_value / _mod) * _mod));
+}
 function array_create_2d(_w, _h, _value = 0) {
 	return array_create_ext(_w, method({_h, _value}, function() {
 		return array_create(_h, _value);
@@ -94,4 +97,10 @@ function string_explode(_string) {
 		_i++;
 	}
 	return _array;
+}
+function string_replace_all_ext(_string, _a, _b) {
+	var _i = 0; repeat (array_length(_a)) {
+		_string = string_replace_all(_string, _a[_i++], _b);
+	}
+	return _string;
 }
