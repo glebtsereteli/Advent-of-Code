@@ -45,7 +45,18 @@ function _2024_14p1() {
 	return (_a * _b * _c * _d);
 }
 function _2024_14p2() {
-	
+	for (var _i = 0, _n = w * h; _i < _n; _i++) {
+		ds_grid_clear(grid, 0);
+		array_foreach(robots, function(_r) {
+			_r.px = mod2(_r.px + _r.vx, w);
+			_r.py = mod2(_r.py + _r.vy, h);
+			grid[# _r.px, _r.py]++;
+		});
+		if (ds_grid_get_max(grid, 0, 0, w, h) > 1) continue;
+		log(_i + 1);
+		_2024_14_print_grid();
+	}
+	return undefined;
 }
 function _2024_14_print_grid() {
 	ds_grid_clear(grid, 0);
