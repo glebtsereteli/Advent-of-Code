@@ -26,12 +26,10 @@ function _2024_14() {
 	}
 }
 function _2024_14p1() {
-	repeat (100) {
-		array_foreach(robots, function(_r) {
-			_r.px = mod2(_r.px + _r.vx, w);
-			_r.py = mod2(_r.py + _r.vy, h);
-		});
-	}
+	array_foreach(robots, function(_r) {
+		_r.px = mod2(_r.px + _r.vx * 100, w);
+		_r.py = mod2(_r.py + _r.vy * 100, h);
+	});
 	ds_grid_clear(grid, 0);
 	array_foreach(robots, function(_r) {
 		grid[# _r.px, _r.py]++;
