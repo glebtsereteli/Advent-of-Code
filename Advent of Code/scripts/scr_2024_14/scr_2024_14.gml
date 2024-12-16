@@ -45,6 +45,8 @@ function _2024_14p1() {
 	return (_a * _b * _c * _d);
 }
 function _2024_14p2() {
+	var _second = undefined;
+	var _maxquad = 0;
 	for (var _i = 0, _n = w * h; _i < _n; _i++) {
 		ds_grid_clear(grid, 0);
 		array_foreach(robots, function(_r) {
@@ -52,11 +54,24 @@ function _2024_14p2() {
 			_r.py = mod2(_r.py + _r.vy, h);
 			grid[# _r.px, _r.py]++;
 		});
-		if (ds_grid_get_max(grid, 0, 0, w, h) > 1) continue;
-		log(_i + 1);
-		_2024_14_print_grid();
+		var _w = w div 2;
+		var _h = h div 2;
+		var _x2 = _w + 1;
+		var _y2 = _h + 1;
+		var _a = ds_grid_get_sum(grid, 0, 0, _w, _h);
+		var _b = ds_grid_get_sum(grid, _x2, 0, w, _h);
+		var _c = ds_grid_get_sum(grid, 0, _y2, _w, h);
+		var _d = ds_grid_get_sum(grid, _x2, _y2, w, h);
+		var _imaxquad = max(
+			ds_grid_get_sum(grid, 0, 0, _w, _h),  ds_grid_get_sum(grid, _x2, 0, w, _h),
+			ds_grid_get_sum(grid, 0, _y2, _w, h), ds_grid_get_sum(grid, _x2, _y2, w, h)
+		);
+		if (_imaxquad > _maxquad) {
+			_maxquad = _imaxquad;
+			_second = _i + 1;
+		}
 	}
-	return undefined;
+	return _second;
 }
 function _2024_14_print_grid() {
 	ds_grid_clear(grid, 0);
